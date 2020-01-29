@@ -77,7 +77,8 @@ namespace CowboyCafe.Data
                 if (!bread)
                     instructions.Add("hold bread");
                 if (!pickle)
-                    instructions.Add("hold pickles");
+                    instructions.Add("hold pickle");
+                
 
                 return instructions;
             }
