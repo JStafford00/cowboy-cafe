@@ -4,34 +4,37 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class TrailBurger
+    public class DakotaDoubleBurger
     {
         private bool bun = true;
         private bool ketchup = true;
         private bool cheese = true;
         private bool mustard = true;
         private bool pickle = true;
+        private bool mayo = true;
+        private bool lettuce = true;
+        private bool tomato = true;
 
 
         /// <summary>
-        /// Price of a Trailburger
+        /// Price of a Dakota Double
         /// </summary>
         public double Price
         {
             get
             {
-                return 4.50;
+                return 5.20;
             }
         }
 
         /// <summary>
-        /// Calories in a Trailburger
+        /// Calories in a Dakota Double
         /// </summary>
         public uint Calories
         {
             get
             {
-                return 288;
+                return 464;
             }
         }
 
@@ -115,6 +118,53 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// If mayo is included.
+        /// </summary>
+        public bool Mayo
+        {
+            get
+            {
+                return mayo;
+            }
+
+            set
+            {
+                mayo = value;
+            }
+        }
+
+        /// <summary>
+        /// If lettuce is included.
+        /// </summary>
+        public bool Lettuce
+        {
+            get
+            {
+                return lettuce;
+            }
+
+            set
+            {
+                lettuce = value;
+            }
+        }
+
+        /// <summary>
+        /// If tomato is included.
+        /// </summary>
+        public bool Tomato
+        {
+            get
+            {
+                return tomato;
+            }
+
+            set
+            {
+                tomato = value;
+            }
+        }
 
 
         /// <summary>
@@ -136,6 +186,12 @@ namespace CowboyCafe.Data
                     instructions.Add("hold pickle");
                 if (!ketchup)
                     instructions.Add("hold ketchup");
+                if (!mayo)
+                    instructions.Add("hold mayo");
+                if (!lettuce)
+                    instructions.Add("hold lettuce");
+                if (!tomato)
+                    instructions.Add("hold tomato");
 
                 return instructions;
             }
