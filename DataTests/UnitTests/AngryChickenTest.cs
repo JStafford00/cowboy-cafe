@@ -5,6 +5,7 @@ using CowboyCafe.Data;
 
 namespace CowboyCafe.DataTests
 {
+
     public class AngryChickenTest
     {
         [Fact]

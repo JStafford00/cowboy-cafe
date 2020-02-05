@@ -4,6 +4,11 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /*
+     * Author: Jordan Stafford
+     * Class: AngryChicken
+     * Purpose: To hold information on the Angry Chicken
+     */
     public class AngryChicken
     {
 
