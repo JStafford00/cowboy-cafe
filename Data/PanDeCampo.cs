@@ -4,6 +4,12 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
+
+    /*
+     * Author: Jordan Stafford
+     * Class: PanDeCampo.cs
+     * Purpose: To hold information on the Pan de Campo Side
+     */
     public class PanDeCampo : Side
     {
         /// <summary>

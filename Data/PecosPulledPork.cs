@@ -4,7 +4,12 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class PecosPulledPork
+    /*
+     * Author: Jordan Stafford
+     * Class: PecosPulledPork.cs
+     * Purpose: To hold information on the Pecos Pulled Pork Entree
+     */
+    public class PecosPulledPork : Entree
     {
         private bool bread = true;
         private bool pickle = true;
@@ -12,7 +17,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Price of a Pecos Pulled Pork.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -23,7 +28,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Calories in a Pecos Pulled Pork.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -66,7 +71,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the making of an Pacos Pulled Pork
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

@@ -4,6 +4,11 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /*
+     * Author: Jordan Stafford
+     * Class: BakedBeans.cs
+     * Purpose: To hold information on the Baked Beans Side
+     */
     public class BakedBeans : Side
     {
         /// <summary>

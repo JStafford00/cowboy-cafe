@@ -4,6 +4,11 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /*
+     * Author: Jordan Stafford
+     * Class: CornDodgers
+     * Purpose: Contains information on Corn Dodgers.
+     */
     public class CornDodgers : Side
     {
         /// <summary>

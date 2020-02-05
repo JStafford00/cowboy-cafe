@@ -6,7 +6,7 @@ namespace CowboyCafe.Data
 {
     /*
      * Author: Jordan Stafford 
-     * Class: ChiliCheeseFries
+     * Class: ChiliCheeseFries.cs
      * Purpose: Chili Cheese Fries Side
     */
     public class ChiliCheeseFries : Side

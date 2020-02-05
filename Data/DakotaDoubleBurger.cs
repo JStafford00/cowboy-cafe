@@ -4,7 +4,12 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class DakotaDoubleBurger
+    /*
+     * Author: Jordan Stafford
+     * Class: DakotaDoubleBurger.cs
+     * Purpose: To hold information on the Dakota Double Burger Entree
+     */
+    public class DakotaDoubleBurger : Entree
     {
         private bool bun = true;
         private bool ketchup = true;
@@ -19,7 +24,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Price of a Dakota Double
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -30,7 +35,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Calories in a Dakota Double
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -170,7 +175,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special Instructions 
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

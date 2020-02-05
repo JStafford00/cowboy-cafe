@@ -4,9 +4,12 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    /// <summary>
-    /// A base class representing a side
-    /// </summary>
+    /*
+     * Author: Nathan Bean
+     * Edited By: Jordan Stafford
+     * Class: Side.cs
+     * Purpose: An abstract class for all the Sides
+     */
     public abstract class Side
     {
         /// <summary>

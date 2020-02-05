@@ -9,13 +9,13 @@ namespace CowboyCafe.Data
      * Class: AngryChicken
      * Purpose: To hold information on the Angry Chicken
      */
-    public class AngryChicken
+    public class AngryChicken : Entree
     {
 
         private bool bread = true;
         private bool pickle = true;
 
-        public double Price
+        public override double Price
         {
 
             /// <summary>
@@ -30,7 +30,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calroies in an Angry Chicken
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -73,7 +73,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the making of an Angry Chicken
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

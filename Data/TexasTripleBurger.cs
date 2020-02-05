@@ -4,7 +4,12 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class TexasTripleBurger
+    /*
+     * Author: Jordan Stafford
+     * Class: TexasTripleBurger.cs
+     * Purpose: To hold information on the Texas Triple Burger Entree
+     */
+    public class TexasTripleBurger : Entree
     {
         private bool bun = true;
         private bool bacon = true;
@@ -21,7 +26,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Price of a Texas Triple
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -32,7 +37,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Calories in a Texas Triple
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -205,7 +210,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special Instructions 
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

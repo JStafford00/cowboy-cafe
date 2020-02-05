@@ -4,12 +4,17 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class RustlersRibs
+    /*
+     * Author: Jordan Stafford
+     * Class: RustlerRibs.cs
+     * Purpose: To hold information on the Rustler Ribs Entree
+     */
+    public class RustlersRibs : Entree
     {
         /// <summary>
         /// Price of Rustler Ribs
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -20,7 +25,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Calories in a Rustler Ribs
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -31,7 +36,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special Instructions 
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
