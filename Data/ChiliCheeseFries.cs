@@ -5,7 +5,8 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /*
-     * Author: Jordan Stafford 
+     * Author: Nathan Bean 
+     * Edited By: Jordan Stafford
      * Class: ChiliCheeseFries.cs
      * Purpose: Chili Cheese Fries Side
     */
