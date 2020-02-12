@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CowboyCafe.Data
+{
+
+    /*
+     * Author: Jordan Stafford
+     * Class: Drinks
+     * Purpose: Contains information on Drinks class.
+     */
+    public abstract class Drink
+    {
+
+        /// <summary>
+        /// Size of the drink
+        /// </summary>
+        public Size Size { get; set; } = Size.Small;
+
+        /// <summary>
+        /// Price of the drink.
+        /// </summary>
+        public abstract double Price { get; set; }
+
+        /// <summary>
+        /// Calories in the drink.
+        /// </summary>
+        public abstract uint Calories { get; set; }
+
+        /// <summary>
+        /// If Ice is added.
+        /// </summary>
+        public bool Ice { get; set; } = true;
+
+        /// <summary>
+        /// Special Instructions
+        /// </summary>
+        public abstract List<String> SpecialInstructions { get; }
+    }
+}
