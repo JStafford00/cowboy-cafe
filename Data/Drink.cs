@@ -21,12 +21,12 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Price of the drink.
         /// </summary>
-        public abstract double Price { get; set; }
+        public abstract double Price { get; }
 
         /// <summary>
         /// Calories in the drink.
         /// </summary>
-        public abstract uint Calories { get; set; }
+        public abstract uint Calories { get; }
 
         /// <summary>
         /// If Ice is added.
