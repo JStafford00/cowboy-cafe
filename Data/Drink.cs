@@ -31,7 +31,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// If Ice is added.
         /// </summary>
-        public bool Ice { get; set; } = true;
+        public virtual bool Ice { get; set; } = true;
 
         /// <summary>
         /// Special Instructions

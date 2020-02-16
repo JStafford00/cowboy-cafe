@@ -12,6 +12,9 @@ namespace CowboyCafe.Data
     public class JerkedSoda : Drink
     {
 
+        private SodaFlavor flavor;
+
+
         /// <summary>
         /// Price override for a Jerked Soda
         /// </summary>
@@ -51,6 +54,19 @@ namespace CowboyCafe.Data
                     default:
                         throw new NotImplementedException();
                 }
+            }
+        }
+
+        public SodaFlavor Flavor
+        {
+            get
+            {
+                return flavor;
+            }
+
+            set
+            {
+                flavor = value;
             }
         }
 
