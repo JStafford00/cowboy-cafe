@@ -34,34 +34,34 @@
 
         <StackPanel Grid.Column="0">
             <TextBlock TextAlignment="Center" Background="White" FontSize="30">Entree</TextBlock>
-            <Button Name="AddCowpokeChili">Cowpoke Chili</Button>
-            <Button Name="AddRustlersRibs">Rustler's Ribs</Button>
-            <Button Name="AddPecosPulledPork">Pecos Pulled Pork</Button>
-            <Button Name="AddTrailBurger">Trail Burger</Button>
-            <Button Name="AddDakotaDoubleBurger">Dakota Double Burger</Button>
-            <Button Name="AddTexasTripleBurger">Texas Triple Burger</Button>
-            <Button Name="AddAngryChicken">Angry Chicken</Button>
+            <Button Name="AddCowpokeChili" Click="AddCowpokeChili_Click">Cowpoke Chili</Button>
+            <Button Name="AddRustlersRibs" Click="AddRustlersRibs_Click">Rustler's Ribs</Button>
+            <Button Name="AddPecosPulledPork" Click="AddPecosPulledPork_Click">Pecos Pulled Pork</Button>
+            <Button Name="AddTrailBurger" Click="AddTrailBurger_Click">Trail Burger</Button>
+            <Button Name="AddDakotaDoubleBurger" Click="AddDakotaDoubleBurger_Click">Dakota Double Burger</Button>
+            <Button Name="AddTexasTripleBurger" Click="AddTexasTripleBurger_Click">Texas Triple Burger</Button>
+            <Button Name="AddAngryChicken" Click="AddAngryChicken_Click">Angry Chicken</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="1">
             <TextBlock TextAlignment="Center" Background="White" FontSize="30">Side</TextBlock>
-            <Button Name="AddChiliCheeseFries">Chili Cheese Fries</Button>
-            <Button Name="AddCornDodgers">Corn Dodgers</Button>
-            <Button Name="AddPanDeCampo">Pan de Campo</Button>
-            <Button Name="AddBakedBeans">Baked Beans</Button>
+            <Button Name="AddChiliCheeseFries" Click="AddChiliCheeseFries_Click">Chili Cheese Fries</Button>
+            <Button Name="AddCornDodgers" Click="AddCornDodgers_Click">Corn Dodgers</Button>
+            <Button Name="AddPanDeCampo" Click="AddPanDeCampo_Click">Pan de Campo</Button>
+            <Button Name="AddBakedBeans" Click="AddBakedBeans_Click">Baked Beans</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="2">
             <TextBlock TextAlignment="Center" Background="White" FontSize="30">Drinks</TextBlock>
-            <Button Name="AddJerkedSoda">Jerked Soda</Button>
-            <Button Name="AddTexasTea">Texas Tea</Button>
-            <Button Name="AddCowboyCoffee">Cowboy Coffee</Button>
-            <Button Name="AddWater">Water</Button>
+            <Button Name="AddJerkedSoda" Click="AddJerkedSoda_Click">Jerked Soda</Button>
+            <Button Name="AddTexasTea" Click="AddTexasTea_Click">Texas Tea</Button>
+            <Button Name="AddCowboyCoffee" Click="AddCowboyCoffee_Click">Cowboy Coffee</Button>
+            <Button Name="AddWater" Click="AddWater_Click">Water</Button>
         </StackPanel>
         
         <StackPanel Grid.Column="3">
             <TextBlock TextAlignment="Center" Background="Gray" FontSize="30">Order</TextBlock>
-            <ListView Name="OrderList" Background="White"/>
+            <ListView Name="OrderList" Background="White" Height="390"/>
         </StackPanel>
 
     </Grid>
