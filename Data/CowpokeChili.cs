@@ -72,6 +72,8 @@ namespace CowboyCafe.Data
             }
         }
 
+        public override string ToString() => "Cowpoke Chili";
+
         /// <summary>
         /// Special instructions for the preparation of the chili
         /// </summary>

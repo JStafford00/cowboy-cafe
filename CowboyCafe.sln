@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{C3BFDB18-4ACD-495B-9CCE-675B7A8FD8FE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTests", "DataTests\DataTests.csproj", "{157E0096-37C4-4A66-80B0-337D690719F2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4749C0C8-7061-4A79-9DD7-706C8CCF3C2F} = {4749C0C8-7061-4A79-9DD7-706C8CCF3C2F}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{938FDA09-9346-4837-A3AE-EA1B3485B73F}"
 	ProjectSection(SolutionItems) = preProject
@@ -17,7 +20,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 		..\..\..\Downloads\Cowbow Cafe.pdf = ..\..\..\Downloads\Cowbow Cafe.pdf
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{4749C0C8-7061-4A79-9DD7-706C8CCF3C2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{4749C0C8-7061-4A79-9DD7-706C8CCF3C2F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C3BFDB18-4ACD-495B-9CCE-675B7A8FD8FE} = {C3BFDB18-4ACD-495B-9CCE-675B7A8FD8FE}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

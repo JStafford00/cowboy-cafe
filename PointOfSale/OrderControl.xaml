@@ -41,6 +41,7 @@
             <Button Name="AddDakotaDoubleBurger" Click="AddDakotaDoubleBurger_Click">Dakota Double Burger</Button>
             <Button Name="AddTexasTripleBurger" Click="AddTexasTripleBurger_Click">Texas Triple Burger</Button>
             <Button Name="AddAngryChicken" Click="AddAngryChicken_Click">Angry Chicken</Button>
+            <TextBlock/>
         </StackPanel>
 
         <StackPanel Grid.Column="1">
@@ -61,7 +62,7 @@
         
         <StackPanel Grid.Column="3">
             <TextBlock TextAlignment="Center" Background="Gray" FontSize="30">Order</TextBlock>
-            <ListView Name="OrderList" Background="White" Height="390"/>
+            <ListView x:Name="OrderList"  Background="White" Height="390" FontSize="10"/>
         </StackPanel>
 
     </Grid>
