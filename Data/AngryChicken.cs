@@ -38,6 +38,14 @@ namespace CowboyCafe.Data
             }
         }
 
+        public override string Name
+        {
+            get
+            {
+                return "Angry Chicken";
+            }
+        }
+
         /// <summary>
         /// If you want bread.
         /// </summary>

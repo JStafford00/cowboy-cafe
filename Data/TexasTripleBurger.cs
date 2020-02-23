@@ -45,6 +45,14 @@ namespace CowboyCafe.Data
             }
         }
 
+        public override string Name
+        {
+            get
+            {
+                return "Texas Triple Burger";
+            }
+        }
+
         /// <summary>
         /// If bacon is on a Texas Triple
         /// </summary>

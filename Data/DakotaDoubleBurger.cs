@@ -43,6 +43,14 @@ namespace CowboyCafe.Data
             }
         }
 
+        public override string Name
+        {
+            get
+            {
+                return "Dakota Double Burger";
+            }
+        }
+
         /// <summary>
         /// If a bun is included.
         /// </summary>

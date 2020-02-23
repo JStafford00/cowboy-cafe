@@ -36,6 +36,14 @@ namespace CowboyCafe.Data
             }
         }
 
+        public override string Name
+        {
+            get
+            {
+                return "Pecos Pulled Pork";
+            }
+        }
+
         /// <summary>
         /// If bread is included.
         /// </summary>

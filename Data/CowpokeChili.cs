@@ -11,6 +11,7 @@ namespace CowboyCafe.Data
     public class CowpokeChili : Entree
     {
         private bool cheese = true;
+
         /// <summary>
         /// If the chili is topped with cheese
         /// </summary>
@@ -72,7 +73,18 @@ namespace CowboyCafe.Data
             }
         }
 
-        public override string ToString() => "Cowpoke Chili";
+        public override string Name
+        {
+            get
+            {
+                return "Cowpoke Chili";
+            }
+        }
+
+        public override string ToString()
+        {
+            return Name;
+        }
 
         /// <summary>
         /// Special instructions for the preparation of the chili

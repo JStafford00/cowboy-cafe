@@ -40,27 +40,39 @@ namespace PointOfSale
 
         private void AddPecosPulledPork_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add("Pecos Pulled Pork");
+            var entree = new PecosPulledPork();
+
+            OrderList.Items.Add(entree);
         }
 
         private void AddTrailBurger_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add("Trail Burger");
+            var entree = new TrailBurger();
+
+            OrderList.Items.Add(entree);
         }
 
         private void AddDakotaDoubleBurger_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add("Dakota Double Burger");
+            var entree = new DakotaDoubleBurger();
+
+            OrderList.Items.Add(entree);
         }
 
         private void AddTexasTripleBurger_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add("Texas Triple Burger");
+
+            var entree = new TexasTripleBurger();
+
+            OrderList.Items.Add(entree);
         }
 
         private void AddAngryChicken_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add("Angry Chicken");
+
+            var entree = new AngryChicken();
+
+            OrderList.Items.Add(entree);
         }
 
         private void AddChiliCheeseFries_Click(object sender, RoutedEventArgs e)

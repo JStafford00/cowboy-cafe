@@ -40,6 +40,14 @@ namespace CowboyCafe.Data
             }
         }
 
+        public override string Name
+        {
+            get
+            {
+                return "Trail Burger";
+            }
+        }
+
         /// <summary>
         /// If a bun is included.
         /// </summary>

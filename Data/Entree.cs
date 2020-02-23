@@ -12,6 +12,7 @@ namespace CowboyCafe.Data
      */
     public abstract class Entree
     {
+
         /// <summary>
         /// Price of a entree.
         /// </summary>
@@ -21,6 +22,16 @@ namespace CowboyCafe.Data
         /// Calories in the entree.
         /// </summary>
         public abstract uint Calories { get; }
+
+        public abstract string Name
+        {
+            get;
+        }
+
+        public override string ToString()
+        {
+            return Name;
+        }
 
         /// <summary>
         /// Special Instructions for the entree.
