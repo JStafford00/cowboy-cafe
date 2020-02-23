@@ -106,36 +106,42 @@ namespace CowboyCafe.Data
             }
         }
 
-        public override string ToString()
+        /// <summary>
+        /// Returns the name to string based on size
+        /// </summary>
+        public override string Name
         {
-            if(!decaf)
+            get
             {
-                switch(Size)
+                if(!decaf)
                 {
-                    case Size.Small:
-                        return "Small Cowboy Coffee";
-                    case Size.Medium:
-                        return "Medium Cowboy Coffee";
-                    case Size.Large:
-                        return "Large Cowboy Coffee";
-                    default:
-                        throw new NotImplementedException();
+                    switch(Size)
+                    {
+                        case Size.Small:
+                            return "Small Cowboy Coffee";
+                        case Size.Medium:
+                            return "Medium Cowboy Coffee";
+                        case Size.Large:
+                            return "Large Cowboy Coffee";
+                        default:
+                            throw new NotImplementedException();
+                    }
                 }
-            }
 
-            else
-            {
-                switch (Size)
+                else
                 {
-                    case Size.Small:
-                        return "Small Decaf Cowboy Coffee";
-                    case Size.Medium:
-                        return "Medium Decaf Cowboy Coffee";
-                    case Size.Large:
-                        return "Large Decaf Cowboy Coffee";
-                    default:
-                        throw new NotImplementedException();
+                    switch(Size)
+                    {
+                        case Size.Small:
+                            return "Small Decaf Cowboy Coffee";
+                        case Size.Medium:
+                            return "Medium Decaf Cowboy Coffee";
+                        case Size.Large:
+                            return "Large Decaf Cowboy Coffee";
+                        default:
+                            throw new NotImplementedException();
 
+                    }
                 }
             }
         }

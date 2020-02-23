@@ -13,6 +13,11 @@ namespace CowboyCafe.Data
     public abstract class Drink
     {
 
+        public abstract string Name
+        {
+            get;
+        }
+
         /// <summary>
         /// Size of the drink
         /// </summary>
@@ -27,6 +32,11 @@ namespace CowboyCafe.Data
         /// Calories in the drink.
         /// </summary>
         public abstract uint Calories { get; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
 
         /// <summary>
         /// If Ice is added.

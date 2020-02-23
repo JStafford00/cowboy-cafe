@@ -45,6 +45,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Returns the name to string
+        /// </summary>
         public override string Name
         {
             get

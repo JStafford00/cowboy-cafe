@@ -33,7 +33,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Calroies in Baked Beans
+        /// Calories in Baked Beans
         /// </summary>
         public override uint Calories
         {
@@ -47,6 +47,28 @@ namespace CowboyCafe.Data
                         return 378;
                     case Size.Large:
                         return 410;
+                    default:
+                        throw new NotImplementedException();
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Returns the name to string based on size
+        /// </summary>
+        public override string Name
+        {
+            get
+            {
+                switch(Size)
+                {
+                    case Size.Small:
+                        return "Small Baked Beans";
+                    case Size.Medium:
+                        return "Medium Baked Beans";
+                    case Size.Large:
+                        return "Large Baked Beans";
                     default:
                         throw new NotImplementedException();
                 }

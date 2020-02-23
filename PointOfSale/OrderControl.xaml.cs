@@ -19,6 +19,9 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
+        /// <summary>
+        /// Initializes Component
+        /// </summary>
         public OrderControl()
         {
             InitializeComponent();
@@ -77,42 +80,58 @@ namespace PointOfSale
 
         private void AddChiliCheeseFries_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add("Chili Cheese Fries");
+            var side = new ChiliCheeseFries();
+
+            OrderList.Items.Add(side);
         }
 
         private void AddCornDodgers_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add("Corn Dodgers");
+            var side = new CornDodgers();
+
+            OrderList.Items.Add(side);
         }
 
         private void AddPanDeCampo_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add("Pan de Campo");
+            var side = new PanDeCampo();
+
+            OrderList.Items.Add(side);
         }
 
         private void AddBakedBeans_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add("Baked Beans");
+            var side = new BakedBeans();
+
+            OrderList.Items.Add(side);
         }
 
         private void AddJerkedSoda_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add("Jerked Soda");
+            var drink = new JerkedSoda();
+
+            OrderList.Items.Add(drink);
         }
 
         private void AddTexasTea_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add("Texas Tea");
+            var drink = new TexasTea();
+
+            OrderList.Items.Add(drink);
         }
 
         private void AddCowboyCoffee_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add("Cowboy Coffee");
+            var drink = new CowboyCoffee();
+
+            OrderList.Items.Add(drink);
         }
 
         private void AddWater_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add("Water");
+            var drink = new Water();
+
+            OrderList.Items.Add(drink);
         }
     }
 }

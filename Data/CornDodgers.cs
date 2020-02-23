@@ -52,5 +52,26 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        /// <summary>
+        /// Returns the name to string based on size
+        /// </summary>
+        public override string Name
+        {
+            get
+            {
+                switch(Size)
+                {
+                    case Size.Small:
+                        return "Small Corn Dodgers";
+                    case Size.Medium:
+                        return "Medium Corn Dodgers";
+                    case Size.Large:
+                        return "Large Corn Dodgers";
+                    default:
+                        throw new NotImplementedException();
+                }
+            }
+        }
     }
 }

@@ -12,6 +12,12 @@ namespace CowboyCafe.Data
      */
     public abstract class Side
     {
+
+        public abstract string Name
+        {
+            get;
+        }
+
         /// <summary>
         /// Gets the size of the entree
         /// </summary>
@@ -26,5 +32,10 @@ namespace CowboyCafe.Data
         /// Gets the calories of the entree
         /// </summary>
         public abstract uint Calories { get; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

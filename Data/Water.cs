@@ -85,5 +85,26 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Returns the name to string based on size
+        /// </summary>
+        public override string Name
+        {
+            get
+            {
+                switch(Size)
+                {
+                    case Size.Small:
+                        return "Small Water";
+                    case Size.Medium:
+                        return "Medium Water";
+                    case Size.Large:
+                        return "Large Water";
+                    default:
+                        throw new NotImplementedException();
+                }
+            }
+        }
     }
 }
