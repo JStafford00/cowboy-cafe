@@ -1,31 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class Order : IOrderItem
+    public class Order
     {
-        private uint lastOrderNumber;
+        private static uint lastOrderNumber;
 
-        private List<IOrderItem> items;
+        private List<IOrderItem> items = new List<IOrderItem>();
 
-        private IEnumerable<IOrderItem> Items { get { return items; } }
+        public IEnumerable<IOrderItem> Items { get { return items; } }
 
-        public double Subtotal { get; } = 0;
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        public double Price => throw new NotImplementedException();
+        public double Subtotal
+        {
+            get
+            {
+                double subtotal = 0;
 
-        public IEnumerable<string> SpecialInstructions => throw new NotImplementedException();
+                foreach (IOrderItem item in items)
+                {
+                    subtotal += item.Price;
+                }
+
+                return subtotal;
+            }
+        }
+
+        private uint OrderNumber
+        {
+            get
+            {
+                return lastOrderNumber + 1;
+            }
+        }
 
         public void Add(IOrderItem item)
         {
-            
+            items.Add(item);
         }
 
         public void Remove(IOrderItem item)
         {
-
+            items.Remove(item);
         }
     }
 }
