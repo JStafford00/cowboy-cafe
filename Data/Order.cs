@@ -11,9 +11,9 @@ namespace CowboyCafe.Data
 
         private List<IOrderItem> items = new List<IOrderItem>();
 
-        public IEnumerable<IOrderItem> Items { get { return items; } }
-
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public IEnumerable<IOrderItem> Items => items.ToArray();
 
         public double Subtotal
         {
@@ -41,11 +41,13 @@ namespace CowboyCafe.Data
         public void Add(IOrderItem item)
         {
             items.Add(item);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
         }
 
         public void Remove(IOrderItem item)
         {
             items.Remove(item);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
         }
     }
 }

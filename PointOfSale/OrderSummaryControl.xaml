@@ -1,26 +1,28 @@
-﻿<UserControl x:Class="CowboyCafe.PointOfSale.OrderSummaryControl"
+﻿<UserControl x:Class="PointOfSale.OrderSummaryControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:CowboyCafe.PointOfSale"
+             xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="300">
+             d:DesignHeight="700" d:DesignWidth="500">
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="13*"/>
+            <RowDefinition Height="80"/>
             <RowDefinition/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="5*"/>
             <ColumnDefinition/>
+            <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" FontSize="20" FontWeight="Bold">Order</TextBlock>
-        <ListView Grid.Row="1" Grid.Column="0"/>
-        <ListView Grid.Row="1" Grid.Column="1"/>
-        <TextBlock Grid.Row="2" Grid.Column="0" FontSize="16">Subtotal</TextBlock>
+        <TextBlock Grid.Row="0" FontSize="60" FontWeight="Bold" TextAlignment="Center" Background="LightSteelBlue">Order</TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="1" Background="LightSteelBlue"/>
+        <ListView Name="OrderDisplay" Grid.Row="1" Grid.Column="0"/>
+        <TextBox x:Name="PriceDisplay" Grid.Row="1" Grid.Column="1" FontSize="16" Text="{Binding Path=Price}"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" FontSize="30" Background="Gray" >Subtotal</TextBlock>
+        <TextBox x:Name="SubTotalDisplay" Grid.Row="2" Grid.Column="1" IsReadOnly="True" FontSize="30" Background="Gray" Text="{Binding Path=Subtotal, StringFormat=c}"/>
 
     </Grid>
 </UserControl>
