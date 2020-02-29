@@ -10,7 +10,7 @@ namespace CowboyCafe.Data
      * Class: Entree.cs
      * Purpose: Entree Abstract Class
      */
-    public abstract class Entree
+    public abstract class Entree : IOrderItem
     {
 
         /// <summary>

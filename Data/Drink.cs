@@ -10,7 +10,7 @@ namespace CowboyCafe.Data
      * Class: Drinks
      * Purpose: Contains information on Drinks class.
      */
-    public abstract class Drink
+    public abstract class Drink : IOrderItem
     {
 
         public abstract string Name

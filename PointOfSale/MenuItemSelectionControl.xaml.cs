@@ -27,7 +27,7 @@ namespace PointOfSale
         private void AddCowpokeChili_Click(object sender, RoutedEventArgs e)
         {
             var entree = new CowpokeChili();
-
+            
             
         }
 

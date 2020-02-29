@@ -19,7 +19,20 @@
 
         <TextBlock Grid.Row="0" FontSize="60" FontWeight="Bold" TextAlignment="Center" Background="LightSteelBlue">Order</TextBlock>
         <TextBlock Grid.Row="0" Grid.Column="1" Background="LightSteelBlue"/>
-        <ListView Name="OrderDisplay" Grid.Row="1" Grid.Column="0"/>
+        <ListBox Name="OrderDisplay" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Items}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="25"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding}"/>
+                        <Button Name="RemoveItemButton" Grid.Column="1" Click="RemoveItemButton_Click">X</Button>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <TextBox x:Name="PriceDisplay" Grid.Row="1" Grid.Column="1" FontSize="16" Text="{Binding Path=Price}"/>
         <TextBlock Grid.Row="2" Grid.Column="0" FontSize="30" Background="Gray" >Subtotal</TextBlock>
         <TextBox x:Name="SubTotalDisplay" Grid.Row="2" Grid.Column="1" IsReadOnly="True" FontSize="30" Background="Gray" Text="{Binding Path=Subtotal, StringFormat=c}"/>
