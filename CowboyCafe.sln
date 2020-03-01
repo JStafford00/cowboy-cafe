@@ -22,7 +22,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointOfSale", "PointOfSale\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{B13BC081-916E-4AB2-B272-FA90B078F395}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\..\Downloads\CowbowCafe.pdf = ..\..\..\Downloads\CowbowCafe.pdf
+		..\..\..\Downloads\Cowbow Cafe.pdf = ..\..\..\Downloads\Cowbow Cafe.pdf
 	EndProjectSection
 EndProject
 Global
