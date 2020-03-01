@@ -14,9 +14,11 @@ using CowboyCafe.Data;
 
 namespace PointOfSale
 {
-    /// <summary>
-    /// Interaction logic for OrderControl.xaml
-    /// </summary>
+    /*
+     * Author: Jordan Stafford
+     * Class: OrderControl
+     * Purpose: User Control for Complete Order, Cancel Order, and Item Selection buttons
+     */
     public partial class OrderControl : UserControl
     {
         /// <summary>
@@ -27,19 +29,34 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Click action for ItemSelectionButton
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ItemSelectionButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Click action for CancelOrderButton
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CancelOrderButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.DataContext = new Order();
         }
 
+        /// <summary>
+        /// Click action for CompleteOrderButton
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CompleteOrderButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.DataContext = new Order();
         }
     }
 }

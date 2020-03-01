@@ -8,7 +8,8 @@
              d:DesignHeight="700" d:DesignWidth="500">
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="80"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="30"/>
             <RowDefinition/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
@@ -17,9 +18,11 @@
             <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" FontSize="60" FontWeight="Bold" TextAlignment="Center" Background="LightSteelBlue">Order</TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="0" Background="LightSteelBlue" FontSize="40" FontWeight="Bold" Text="Order"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Background="LightSteelBlue" FontSize="20" Text="{Binding Path=OrderNumber}"/>
         <TextBlock Grid.Row="0" Grid.Column="1" Background="LightSteelBlue"/>
-        <ListBox Name="OrderDisplay" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Items}">
+        <TextBlock Grid.Row="1" Grid.Column="1" Background="LightSteelBlue"/>
+        <ListBox Name="OrderDisplay" Grid.Row="2" Grid.Column="0" ItemsSource="{Binding Path=Items}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -33,9 +36,9 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <TextBox x:Name="PriceDisplay" Grid.Row="1" Grid.Column="1" FontSize="16" Text="{Binding Path=Price}"/>
-        <TextBlock Grid.Row="2" Grid.Column="0" FontSize="30" Background="Gray" >Subtotal</TextBlock>
-        <TextBox x:Name="SubTotalDisplay" Grid.Row="2" Grid.Column="1" IsReadOnly="True" FontSize="30" Background="Gray" Text="{Binding Path=Subtotal, StringFormat=c}"/>
+        <TextBox x:Name="PriceDisplay" Grid.Row="2" Grid.Column="1" FontSize="16" Text="{Binding Path=Price}"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" FontSize="30" Background="Gray" >Subtotal</TextBlock>
+        <TextBox x:Name="SubTotalDisplay" Grid.Row="3" Grid.Column="1" IsReadOnly="True" FontSize="30" Background="Gray" Text="{Binding Path=Subtotal, StringFormat=c}"/>
 
     </Grid>
 </UserControl>
