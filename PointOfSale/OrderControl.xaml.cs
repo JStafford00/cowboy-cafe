@@ -21,12 +21,16 @@ namespace PointOfSale
      */
     public partial class OrderControl : UserControl
     {
+        
         /// <summary>
         /// Initializes Component
         /// </summary>
         public OrderControl()
         {
             InitializeComponent();
+            var order = new Order();
+            this.DataContext = order;
+
         }
 
         /// <summary>

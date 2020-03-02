@@ -5,7 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="700" d:DesignWidth="500">
+             d:DesignHeight="1080" d:DesignWidth="520">
+    <UserControl.Resources>
+        <Style TargetType="ListBoxItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+    </UserControl.Resources>
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -22,23 +27,25 @@
         <TextBlock Grid.Row="1" Grid.Column="0" Background="LightSteelBlue" FontSize="20" Text="{Binding Path=OrderNumber}"/>
         <TextBlock Grid.Row="0" Grid.Column="1" Background="LightSteelBlue"/>
         <TextBlock Grid.Row="1" Grid.Column="1" Background="LightSteelBlue"/>
-        <ListBox Name="OrderDisplay" Grid.Row="2" Grid.Column="0" ItemsSource="{Binding Path=Items}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition Width="25"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="{Binding}"/>
-                        <Button Name="RemoveItemButton" Grid.Column="1" Click="RemoveItemButton_Click">X</Button>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        <TextBox x:Name="PriceDisplay" Grid.Row="2" Grid.Column="1" FontSize="16" Text="{Binding Path=Price}"/>
-        <TextBlock Grid.Row="3" Grid.Column="0" FontSize="30" Background="Gray" >Subtotal</TextBlock>
-        <TextBox x:Name="SubTotalDisplay" Grid.Row="3" Grid.Column="1" IsReadOnly="True" FontSize="30" Background="Gray" Text="{Binding Path=Subtotal, StringFormat=c}"/>
+        <StackPanel Grid.Row="2" Grid.Column="0">
+            <ListBox Name="OrderDisplay" ItemsSource="{Binding Path=Items}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="25"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="{Binding}"/>
+                            <TextBlock x:Name="PriceDisplay" Grid.Column="1" FontSize="16" Text="{Binding Path=Price}"/>
+                            <Button Name="RemoveItemButton" Grid.Column="1" Click="RemoveItemButton_Click">X</Button>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
 
+        <TextBlock Grid.Row="3" Grid.Column="0" FontSize="30" Background="Gray" >Subtotal</TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="1" FontSize="30" Background="Gray" Text="{Binding Path=Subtotal, StringFormat=c}"/>
     </Grid>
 </UserControl>

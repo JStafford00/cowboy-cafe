@@ -21,6 +21,7 @@ namespace PointOfSale
      */
     public partial class MenuItemSelectionControl : UserControl
     {
+
         /// <summary>
         /// Initializes MenuItemSelectionControl
         /// </summary>

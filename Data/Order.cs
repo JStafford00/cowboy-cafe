@@ -12,7 +12,7 @@ namespace CowboyCafe.Data
      */
     public class Order
     {
-        private static uint lastOrderNumber = 0;
+        private static uint lastOrderNumber = 1;
 
         private List<IOrderItem> items = new List<IOrderItem>();
 
@@ -30,9 +30,9 @@ namespace CowboyCafe.Data
         {
             get
             {
-                double subtotal = 0;
+                double subtotal = 0.0;
 
-                foreach (IOrderItem item in items)
+                foreach (IOrderItem item in Items)
                 {
                     subtotal += item.Price;
                 }
@@ -44,11 +44,11 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The current order number
         /// </summary>
-        private uint OrderNumber
+        public uint OrderNumber
         {
             get
             {
-                return lastOrderNumber + 1;
+                return lastOrderNumber++;
             }
         }
 
@@ -60,6 +60,8 @@ namespace CowboyCafe.Data
         {
             items.Add(item);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+
         }
 
         /// <summary>
@@ -70,6 +72,7 @@ namespace CowboyCafe.Data
         {
             items.Remove(item);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
     }
 }
