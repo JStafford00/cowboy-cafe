@@ -37,9 +37,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddCowpokeChili_Click(object sender, RoutedEventArgs e)
         {
+
             var entree = new CowpokeChili();
 
-            if(DataContext is Order data)
+            if(this.DataContext is Order data)
             {
                 data.Add(entree);
             }

@@ -10,7 +10,7 @@ namespace CowboyCafe.Data
      * Class: Order
      * Purpose: Order object class
      */
-    public class Order
+    public class Order : INotifyPropertyChanged
     {
         private static uint lastOrderNumber = 1;
 
