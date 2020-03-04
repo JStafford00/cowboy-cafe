@@ -23,10 +23,8 @@
             <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Background="LightSteelBlue" FontSize="40" FontWeight="Bold" Text="Order"/>
-        <TextBlock Grid.Row="1" Grid.Column="0" Background="LightSteelBlue" FontSize="20" Text="{Binding Path=OrderNumber}"/>
-        <TextBlock Grid.Row="0" Grid.Column="1" Background="LightSteelBlue"/>
-        <TextBlock Grid.Row="1" Grid.Column="1" Background="LightSteelBlue"/>
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Background="LightSteelBlue" FontSize="40" FontWeight="Bold" Text="Order"/>
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Background="LightSteelBlue" FontSize="20" Text="{Binding Path=OrderNumber}"/>
 
         <ListBox Name="OrderDisplay" ItemsSource="{Binding Path=Items}" Grid.Row="2" Grid.ColumnSpan="2">
             <ListBox.ItemTemplate>

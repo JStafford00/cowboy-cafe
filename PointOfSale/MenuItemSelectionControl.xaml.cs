@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
@@ -30,114 +31,68 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Click action for Cowpoke Chili button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddCowpokeChili_Click(object sender, RoutedEventArgs e)
+        private void ButtonClick(object sender, RoutedEventArgs e)
         {
-
-            var entree = new CowpokeChili();
-
-            if(this.DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+            if(DataContext is Order order)
             {
-                data.Add(entree);
+
+                if (sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "Cowpoke Chili":
+                            var entree = new CowpokeChili();
+                            var screen = new CustomizeCowpokeChili();
+                            screen.DataContext = entree;
+                            order.Add(entree);
+                            orderControl.SwapScreen(screen);
+                            break;
+                        case "Rustler's Ribs":
+                            order.Add(new RustlersRibs());
+                            break;
+                        case "Pecos Pulled Pork":
+                            order.Add(new PecosPulledPork());
+                            break;
+                        case "Trail Burger":
+                            order.Add(new TrailBurger());
+                            break;
+                        case "Dakota Double Burger":
+                            order.Add(new DakotaDoubleBurger());
+                            break;
+                        case "Texas Triple Burger":
+                            order.Add(new TexasTripleBurger());
+                            break;
+                        case "Angry Chicken":
+                            order.Add(new AngryChicken());
+                            break;
+                        default:
+                            throw new NotImplementedException();
+                    }
+                }
             }
             
         }
 
         /// <summary>
-        /// Click action for Rusler's Ribs button
+        /// Click action for Cowpoke Chili button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void AddRustlersRibs_Click(object sender, RoutedEventArgs e)
+       /* private void AddCowpokeChili_Click(object sender, RoutedEventArgs e)
         {
-            var entree = new RustlersRibs();
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            var entree = new CowpokeChili();
 
             if(DataContext is Order data)
             {
                 data.Add(entree);
+                orderControl.SwapScreen(new CustomizeCowpokeChili());
             }
+            
         }
-
-        /// <summary>
-        /// Click action for Pecos Pulled Pork button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddPecosPulledPork_Click(object sender, RoutedEventArgs e)
-        {
-            var entree = new PecosPulledPork();
-
-            if(DataContext is Order data)
-            {
-                data.Add(entree);
-            }
-        }
-
-        /// <summary>
-        /// Click action for Trail Burger button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddTrailBurger_Click(object sender, RoutedEventArgs e)
-        {
-            var entree = new TrailBurger();
-
-            if(DataContext is Order data)
-            {
-                data.Add(entree);
-            }
-        }
-
-        /// <summary>
-        /// Click action for Dakota Double Burger button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddDakotaDoubleBurger_Click(object sender, RoutedEventArgs e)
-        {
-            var entree = new DakotaDoubleBurger();
-
-            if(DataContext is Order data)
-            {
-                data.Add(entree);
-            }
-        }
-
-        /// <summary>
-        /// Click action for Texas Triple Burger button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddTexasTripleBurger_Click(object sender, RoutedEventArgs e)
-        {
-
-            var entree = new TexasTripleBurger();
-
-            if(DataContext is Order data)
-            {
-                data.Add(entree);
-            }
-        }
-
-        /// <summary>
-        /// Click action for Angry Chicken button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddAngryChicken_Click(object sender, RoutedEventArgs e)
-        {
-
-            var entree = new AngryChicken();
-
-            if(DataContext is Order data)
-            {
-                data.Add(entree);
-            }
-        }
+        */
 
         /// <summary>
         /// Click action for Chili Cheese Fries button

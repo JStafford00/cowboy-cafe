@@ -37,6 +37,10 @@
         <Button Name="CompleteOrderButton" Grid.Row="0" Grid.Column="2" FontWeight="Bold" Click="CompleteOrderButton_Click">Complete Order</Button>
 
         <local:OrderSummaryControl Grid.Column="3" Grid.RowSpan="2"/>
-        <local:MenuItemSelectionControl Grid.Row="1" Grid.ColumnSpan="3"/>
+        
+
+        <Border x:Name="Container" Grid.ColumnSpan="3" Grid.Row="1" BorderThickness="2" BorderBrush="Black">
+            <local:MenuItemSelectionControl/>
+        </Border>
     </Grid>
 </UserControl>
