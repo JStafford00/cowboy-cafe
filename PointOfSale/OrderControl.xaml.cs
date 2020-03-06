@@ -28,8 +28,7 @@ namespace PointOfSale
         public OrderControl()
         {
             InitializeComponent();
-            var order = new Order();
-            this.DataContext = order;
+            this.DataContext = new Order();
 
         }
 
@@ -40,7 +39,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ItemSelectionButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Container.Child = new MenuItemSelectionControl();
         }
 
         /// <summary>

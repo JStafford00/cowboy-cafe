@@ -46,18 +46,18 @@
 
         <StackPanel Grid.Column="1">
             <TextBlock TextAlignment="Center" Background="White" FontSize="30">Side</TextBlock>
-            <Button Name="AddChiliCheeseFries" Click="AddChiliCheeseFries_Click">Chili Cheese Fries</Button>
-            <Button Name="AddCornDodgers" Click="AddCornDodgers_Click">Corn Dodgers</Button>
-            <Button Name="AddPanDeCampo" Click="AddPanDeCampo_Click">Pan de Campo</Button>
-            <Button Name="AddBakedBeans" Click="AddBakedBeans_Click">Baked Beans</Button>
+            <Button Name="AddChiliCheeseFries" Tag="Chili Cheese Fries" Click="ButtonClick">Chili Cheese Fries</Button>
+            <Button Name="AddCornDodgers" Tag="Corn Dodgers" Click="ButtonClick">Corn Dodgers</Button>
+            <Button Name="AddPanDeCampo" Tag="Pan De Campo" Click="ButtonClick">Pan de Campo</Button>
+            <Button Name="AddBakedBeans" Tag="Baked Beans" Click="ButtonClick">Baked Beans</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="2">
             <TextBlock TextAlignment="Center" Background="White" FontSize="30">Drinks</TextBlock>
-            <Button Name="AddJerkedSoda" Click="AddJerkedSoda_Click">Jerked Soda</Button>
-            <Button Name="AddTexasTea" Click="AddTexasTea_Click">Texas Tea</Button>
-            <Button Name="AddCowboyCoffee" Click="AddCowboyCoffee_Click">Cowboy Coffee</Button>
-            <Button Name="AddWater" Click="AddWater_Click">Water</Button>
+            <Button Name="AddJerkedSoda" Tag="Jerked Soda" Click="ButtonClick">Jerked Soda</Button>
+            <Button Name="AddTexasTea" Tag="Texas Tea" Click="ButtonClick">Texas Tea</Button>
+            <Button Name="AddCowboyCoffee" Tag="Cowboy Coffee" Click="ButtonClick">Cowboy Coffee</Button>
+            <Button Name="AddWater" Tag="Water" Click="ButtonClick">Water</Button>
         </StackPanel>
 
     </Grid>

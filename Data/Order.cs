@@ -58,10 +58,13 @@ namespace CowboyCafe.Data
         /// <param name="item">Item being added</param>
         public void Add(IOrderItem item)
         {
+            if (item is INotifyPropertyChanged notifier)
+                notifier.PropertyChanged += OnItemPropertyChange;
+
             items.Add(item);
+
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
-
         }
 
         /// <summary>
@@ -70,9 +73,25 @@ namespace CowboyCafe.Data
         /// <param name="item">Item being removed</param>
         public void Remove(IOrderItem item)
         {
+            if (item is INotifyPropertyChanged notifier)
+                notifier.PropertyChanged -= OnItemPropertyChange;
+
             items.Remove(item);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+        }
+
+        /// <summary>
+        /// Event listener
+        /// </summary>
+        private void OnItemPropertyChange(object sender, PropertyChangedEventArgs e)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+
+            if (e.PropertyName == "Price")
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            }
         }
     }
 }

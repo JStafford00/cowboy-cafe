@@ -10,9 +10,10 @@
 
         <StackPanel>
             <TextBlock Text="Customize Cowpoke Chili" FontSize="30"/>
-            <Label>Green Onions</Label>
-            <CheckBox IsChecked="{Binding Path=GreenOnions}"/>
+            <CheckBox IsChecked="{Binding Path=Cheese}">Cheese</CheckBox>
+            <CheckBox IsChecked="{Binding Path=GreenOnions}">Green Onions</CheckBox>
+            <CheckBox IsChecked="{Binding Path=SourCream}">Sour Cream</CheckBox>
         </StackPanel>
-        
+
     </Grid>
 </UserControl>

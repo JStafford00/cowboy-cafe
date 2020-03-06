@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
@@ -10,6 +11,7 @@ namespace CowboyCafe.Data
      */
     public class CowpokeChili : Entree
     {
+
         private bool cheese = true;
 
         /// <summary>
@@ -18,7 +20,11 @@ namespace CowboyCafe.Data
         public bool Cheese
         {
             get { return cheese; }
-            set { cheese = value; }
+            set 
+            { 
+                cheese = value;
+                NotifyOfPropertyChange("Cheese");
+            }
         }
 
         private bool sourCream = true;
@@ -28,7 +34,11 @@ namespace CowboyCafe.Data
         public bool SourCream
         {
             get { return sourCream; }
-            set { sourCream = value; }
+            set 
+            { 
+                sourCream = value;
+                NotifyOfPropertyChange("SourCream");
+            }
         }
 
         private bool greenOnions = true;
@@ -38,7 +48,11 @@ namespace CowboyCafe.Data
         public bool GreenOnions
         {
             get { return greenOnions; }
-            set { greenOnions = value; }
+            set 
+            { 
+                greenOnions = value;
+                NotifyOfPropertyChange("GreenOnions");
+            }
         }
 
         private bool tortillaStrips = true;
@@ -105,6 +119,8 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        
     }
 }
 
