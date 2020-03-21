@@ -67,6 +67,7 @@ namespace CowboyCafe.Data
             set
             {
                 flavor = value;
+                NotifyOfPropertyChange("Flavor");
             }
         }
 

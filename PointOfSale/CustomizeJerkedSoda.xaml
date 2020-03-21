@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="PointOfSale.CustomizeJerkedSoda"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Customize Jerked Soda" FontSize="30"/>
+            <RadioButton Name="CreamSodaRadioButton" Tag="Cream Soda" Click="FlavorRadioButtonClick" IsChecked="True">Cream Soda</RadioButton>
+            <RadioButton Name="OrangeSodaRadioButton" Tag="Orange Soda" Click="FlavorRadioButtonClick">Orange Soda</RadioButton>
+            <RadioButton Name="SarsparillaRadioButton" Tag="Sarsparilla" Click="FlavorRadioButtonClick">Sarsparilla</RadioButton>
+            <RadioButton Name="BirchBeerRadioButton" Tag="Birch Beer" Click="FlavorRadioButtonClick">Birch Beer</RadioButton>
+            <RadioButton Name="RootBeerRadioButton" Tag="Root Beer" Click="FlavorRadioButtonClick">Root Beer</RadioButton>
+
+
+
+
+        </StackPanel>
+    </Grid>
+</UserControl>

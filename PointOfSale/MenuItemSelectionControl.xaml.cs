@@ -43,12 +43,13 @@ namespace PointOfSale
                 {
                     switch (button.Tag)
                     {
+
                         case "Cowpoke Chili":
-                            var entree = new CowpokeChili();
-                            var screen = new CustomizeCowpokeChili();
-                            screen.DataContext = entree;
-                            order.Add(entree);
-                            orderControl.SwapScreen(screen);
+                            var entreeCC = new CowpokeChili();
+                            var screenCC = new CustomizeCowpokeChili();
+                            screenCC.DataContext = entreeCC;
+                            order.Add(entreeCC);
+                            orderControl.SwapScreen(screenCC);
                             break;
 
                         case "Rustler's Ribs":
@@ -56,23 +57,43 @@ namespace PointOfSale
                             break;
 
                         case "Pecos Pulled Pork":
-                            order.Add(new PecosPulledPork());
+                            var entreePP = new PecosPulledPork();
+                            var screenPP = new CustomizePecosPulledPork();
+                            screenPP.DataContext = entreePP;
+                            order.Add(entreePP);
+                            orderControl.SwapScreen(screenPP);
                             break;
 
                         case "Trail Burger":
-                            order.Add(new TrailBurger());
+                            var entreeTB = new TrailBurger();
+                            var screenTB = new CustomizeTrailBurger();
+                            screenTB.DataContext = entreeTB;
+                            order.Add(entreeTB);
+                            orderControl.SwapScreen(screenTB);
                             break;
 
                         case "Dakota Double Burger":
-                            order.Add(new DakotaDoubleBurger());
+                            var entreeDD = new DakotaDoubleBurger();
+                            var screenDD = new CustomizeDakotaDoubleBurger();
+                            screenDD.DataContext = entreeDD;
+                            order.Add(entreeDD);
+                            orderControl.SwapScreen(screenDD);
                             break;
 
                         case "Texas Triple Burger":
-                            order.Add(new TexasTripleBurger());
+                            var entreeTTB = new DakotaDoubleBurger();
+                            var screenTTB = new CustomizeDakotaDoubleBurger();
+                            screenTTB.DataContext = entreeTTB;
+                            order.Add(entreeTTB);
+                            orderControl.SwapScreen(screenTTB);
                             break;
 
                         case "Angry Chicken":
-                            order.Add(new AngryChicken());
+                            var entreeAC = new AngryChicken();
+                            var screenAC = new CustomizeAngryChicken();
+                            screenAC.DataContext = entreeAC;
+                            order.Add(entreeAC);
+                            orderControl.SwapScreen(screenAC);
                             break;
 
                         case "Chili Cheese Fries":
@@ -92,11 +113,19 @@ namespace PointOfSale
                             break;
 
                         case "Jerked Soda":
-                            order.Add(new JerkedSoda());
+                            var drinkJS = new JerkedSoda();
+                            var screenJS = new CustomizeJerkedSoda();
+                            screenJS.DataContext = drinkJS;
+                            order.Add(drinkJS);
+                            orderControl.SwapScreen(screenJS);
                             break;
 
                         case "Texas Tea":
-                            order.Add(new TexasTea());
+                            var drinkTT = new TexasTea();
+                            var screenTT = new CustomizeTexasTea();
+                            screenTT.DataContext = drinkTT;
+                            order.Add(drinkTT);
+                            orderControl.SwapScreen(screenTT);
                             break;
 
                         case "Cowboy Coffee":

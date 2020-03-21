@@ -6,42 +6,40 @@ namespace CowboyCafe.Data
 {
     /*
      * Author: Jordan Stafford
-     * Class: TexasTripleBurger.cs
-     * Purpose: To hold information on the Texas Triple Burger Entree
+     * Class: DakotaDoubleBurger.cs
+     * Purpose: To hold information on the Dakota Double Burger Entree
      */
-    public class TexasTripleBurger : Entree
+    public class DakotaDoubleBurger : Entree
     {
         private bool bun = true;
-        private bool bacon = true;
-        private bool egg = true;
         private bool ketchup = true;
-        private bool lettuce = true;
-        private bool tomato = true;
         private bool cheese = true;
-        private bool mayo = true;
         private bool mustard = true;
         private bool pickle = true;
+        private bool mayo = true;
+        private bool lettuce = true;
+        private bool tomato = true;
 
 
         /// <summary>
-        /// Price of a Texas Triple
+        /// Price of a Dakota Double
         /// </summary>
         public override double Price
         {
             get
             {
-                return 6.45;
+                return 5.20;
             }
         }
 
         /// <summary>
-        /// Calories in a Texas Triple
+        /// Calories in a Dakota Double
         /// </summary>
         public override uint Calories
         {
             get
             {
-                return 698;
+                return 464;
             }
         }
 
@@ -52,44 +50,12 @@ namespace CowboyCafe.Data
         {
             get
             {
-                return "Texas Triple Burger";
+                return "Dakota Double Burger";
             }
         }
 
         /// <summary>
-        /// If bacon is on a Texas Triple
-        /// </summary>
-        public bool Bacon
-        {
-            get
-            {
-                return bacon;
-            }
-
-            set
-            {
-                bacon = value;
-            }
-        }
-
-        /// <summary>
-        /// If egg is on your Texas Triple
-        /// </summary>
-        public bool Egg
-        {
-            get
-            {
-                return egg;
-            }
-
-            set
-            {
-                egg = value;
-            }
-        }
-
-        /// <summary>
-        /// If a bun is on your Texas Triple
+        /// If a bun is included.
         /// </summary>
         public bool Bun
         {
@@ -101,11 +67,12 @@ namespace CowboyCafe.Data
             set
             {
                 bun = value;
+                NotifyOfPropertyChange("Bun");
             }
         }
 
         /// <summary>
-        /// If cheese is on your Texas Triple
+        /// If cheese is included
         /// </summary>
         public bool Cheese
         {
@@ -117,11 +84,12 @@ namespace CowboyCafe.Data
             set
             {
                 cheese = value;
+                NotifyOfPropertyChange("Cheese");
             }
         }
 
         /// <summary>
-        /// If ketchup is on your Texas Triple
+        /// If ketchup is included.
         /// </summary>
         public bool Ketchup
         {
@@ -133,43 +101,12 @@ namespace CowboyCafe.Data
             set
             {
                 ketchup = value;
+                NotifyOfPropertyChange("Ketchup");
             }
         }
 
         /// <summary>
-        /// If lettuce is on your Texas Triple
-        /// </summary>
-        public bool Lettuce
-        {
-            get
-            {
-                return lettuce;
-            }
-
-            set
-            {
-                lettuce = value;
-            }
-        }
-
-        /// <summary>
-        /// If mayo is on your Texas Triple
-        /// </summary>
-        public bool Mayo
-        {
-            get
-            {
-                return mayo;
-            }
-
-            set
-            {
-                mayo = value;
-            }
-        }
-
-        /// <summary>
-        /// If mustard is on your Texas Triple
+        /// If mustard is included.
         /// </summary>
         public bool Mustard
         {
@@ -181,27 +118,12 @@ namespace CowboyCafe.Data
             set
             {
                 mustard = value;
+                NotifyOfPropertyChange("Mustard");
             }
         }
 
         /// <summary>
-        /// If tomato is on your Texas Triple
-        /// </summary>
-        public bool Tomato
-        {
-            get
-            {
-                return tomato;
-            }
-
-            set
-            {
-                tomato = value;
-            }
-        }
-
-        /// <summary>
-        /// If you want pickles on your Texas Triple
+        /// If pickles are included.
         /// </summary>
         public bool Pickle
         {
@@ -213,9 +135,60 @@ namespace CowboyCafe.Data
             set
             {
                 pickle = value;
+                NotifyOfPropertyChange("Pickle");
             }
         }
 
+        /// <summary>
+        /// If mayo is included.
+        /// </summary>
+        public bool Mayo
+        {
+            get
+            {
+                return mayo;
+            }
+
+            set
+            {
+                mayo = value;
+                NotifyOfPropertyChange("Mayo");
+            }
+        }
+
+        /// <summary>
+        /// If lettuce is included.
+        /// </summary>
+        public bool Lettuce
+        {
+            get
+            {
+                return lettuce;
+            }
+
+            set
+            {
+                lettuce = value;
+                NotifyOfPropertyChange("Lettuce");
+            }
+        }
+
+        /// <summary>
+        /// If tomato is included.
+        /// </summary>
+        public bool Tomato
+        {
+            get
+            {
+                return tomato;
+            }
+
+            set
+            {
+                tomato = value;
+                NotifyOfPropertyChange("Tomato");
+            }
+        }
 
 
         /// <summary>
@@ -227,26 +200,22 @@ namespace CowboyCafe.Data
             {
                 var instructions = new List<string>();
 
-                if (!bacon)
-                    instructions.Add("hold bacon");
-                if (!egg)
-                    instructions.Add("hold egg");
                 if (!bun)
                     instructions.Add("hold bun");
                 if (!cheese)
                     instructions.Add("hold cheese");
-                if (!lettuce)
-                    instructions.Add("hold lettuce");
                 if (!mustard)
                     instructions.Add("hold mustard");
                 if (!pickle)
                     instructions.Add("hold pickle");
                 if (!ketchup)
                     instructions.Add("hold ketchup");
-                if (!tomato)
-                    instructions.Add("hold tomato");
                 if (!mayo)
                     instructions.Add("hold mayo");
+                if (!lettuce)
+                    instructions.Add("hold lettuce");
+                if (!tomato)
+                    instructions.Add("hold tomato");
 
                 return instructions;
             }

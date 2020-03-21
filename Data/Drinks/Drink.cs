@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
@@ -10,13 +11,12 @@ namespace CowboyCafe.Data
      * Class: Drinks
      * Purpose: Contains information on Drinks class.
      */
-    public abstract class Drink : IOrderItem
+    public abstract class Drink : IOrderItem, INotifyPropertyChanged
     {
 
-        public abstract string Name
-        {
-            get;
-        }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public abstract string Name { get; }
 
         /// <summary>
         /// Size of the drink
@@ -47,5 +47,15 @@ namespace CowboyCafe.Data
         /// Special Instructions
         /// </summary>
         public abstract List<String> SpecialInstructions { get; }
+
+        /// <summary>
+        /// Helper method for changing properties.
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+        }
     }
 }

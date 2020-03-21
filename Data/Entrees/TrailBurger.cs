@@ -6,40 +6,37 @@ namespace CowboyCafe.Data
 {
     /*
      * Author: Jordan Stafford
-     * Class: DakotaDoubleBurger.cs
-     * Purpose: To hold information on the Dakota Double Burger Entree
+     * Class: TrailBurger.cs
+     * Purpose: To hold information on the Trail Burger Entree
      */
-    public class DakotaDoubleBurger : Entree
+    public class TrailBurger : Entree
     {
         private bool bun = true;
         private bool ketchup = true;
         private bool cheese = true;
         private bool mustard = true;
         private bool pickle = true;
-        private bool mayo = true;
-        private bool lettuce = true;
-        private bool tomato = true;
 
 
         /// <summary>
-        /// Price of a Dakota Double
+        /// Price of a Trailburger
         /// </summary>
         public override double Price
         {
             get
             {
-                return 5.20;
+                return 4.50;
             }
         }
 
         /// <summary>
-        /// Calories in a Dakota Double
+        /// Calories in a Trailburger
         /// </summary>
         public override uint Calories
         {
             get
             {
-                return 464;
+                return 288;
             }
         }
 
@@ -50,7 +47,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                return "Dakota Double Burger";
+                return "Trail Burger";
             }
         }
 
@@ -67,6 +64,7 @@ namespace CowboyCafe.Data
             set
             {
                 bun = value;
+                NotifyOfPropertyChange("Bun");
             }
         }
 
@@ -83,6 +81,7 @@ namespace CowboyCafe.Data
             set
             {
                 cheese = value;
+                NotifyOfPropertyChange("Cheese");
             }
         }
 
@@ -99,6 +98,7 @@ namespace CowboyCafe.Data
             set
             {
                 ketchup = value;
+                NotifyOfPropertyChange("Ketchup");
             }
         }
 
@@ -115,6 +115,7 @@ namespace CowboyCafe.Data
             set
             {
                 mustard = value;
+                NotifyOfPropertyChange("Mustard");
             }
         }
 
@@ -131,56 +132,10 @@ namespace CowboyCafe.Data
             set
             {
                 pickle = value;
+                NotifyOfPropertyChange("Pickle");
             }
         }
 
-        /// <summary>
-        /// If mayo is included.
-        /// </summary>
-        public bool Mayo
-        {
-            get
-            {
-                return mayo;
-            }
-
-            set
-            {
-                mayo = value;
-            }
-        }
-
-        /// <summary>
-        /// If lettuce is included.
-        /// </summary>
-        public bool Lettuce
-        {
-            get
-            {
-                return lettuce;
-            }
-
-            set
-            {
-                lettuce = value;
-            }
-        }
-
-        /// <summary>
-        /// If tomato is included.
-        /// </summary>
-        public bool Tomato
-        {
-            get
-            {
-                return tomato;
-            }
-
-            set
-            {
-                tomato = value;
-            }
-        }
 
 
         /// <summary>
@@ -202,12 +157,6 @@ namespace CowboyCafe.Data
                     instructions.Add("hold pickle");
                 if (!ketchup)
                     instructions.Add("hold ketchup");
-                if (!mayo)
-                    instructions.Add("hold mayo");
-                if (!lettuce)
-                    instructions.Add("hold lettuce");
-                if (!tomato)
-                    instructions.Add("hold tomato");
 
                 return instructions;
             }
