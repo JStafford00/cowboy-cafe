@@ -45,11 +45,7 @@ namespace PointOfSale
                     {
 
                         case "Cowpoke Chili":
-                            var entreeCC = new CowpokeChili();
-                            var screenCC = new CustomizeCowpokeChili();
-                            screenCC.DataContext = entreeCC;
-                            order.Add(entreeCC);
-                            orderControl.SwapScreen(screenCC);
+                            AddItemAndOpenCusomizationScreen(new CowpokeChili(), new CustomizeCowpokeChili());
                             break;
 
                         case "Rustler's Ribs":
@@ -57,83 +53,55 @@ namespace PointOfSale
                             break;
 
                         case "Pecos Pulled Pork":
-                            var entreePP = new PecosPulledPork();
-                            var screenPP = new CustomizePecosPulledPork();
-                            screenPP.DataContext = entreePP;
-                            order.Add(entreePP);
-                            orderControl.SwapScreen(screenPP);
+                            AddItemAndOpenCusomizationScreen(new PecosPulledPork(), new CustomizePecosPulledPork());
                             break;
 
                         case "Trail Burger":
-                            var entreeTB = new TrailBurger();
-                            var screenTB = new CustomizeTrailBurger();
-                            screenTB.DataContext = entreeTB;
-                            order.Add(entreeTB);
-                            orderControl.SwapScreen(screenTB);
+                            AddItemAndOpenCusomizationScreen(new TrailBurger(), new CustomizeTrailBurger());
                             break;
 
                         case "Dakota Double Burger":
-                            var entreeDD = new DakotaDoubleBurger();
-                            var screenDD = new CustomizeDakotaDoubleBurger();
-                            screenDD.DataContext = entreeDD;
-                            order.Add(entreeDD);
-                            orderControl.SwapScreen(screenDD);
+                            AddItemAndOpenCusomizationScreen(new DakotaDoubleBurger(), new CustomizeDakotaDoubleBurger());
                             break;
 
                         case "Texas Triple Burger":
-                            var entreeTTB = new DakotaDoubleBurger();
-                            var screenTTB = new CustomizeDakotaDoubleBurger();
-                            screenTTB.DataContext = entreeTTB;
-                            order.Add(entreeTTB);
-                            orderControl.SwapScreen(screenTTB);
+                            AddItemAndOpenCusomizationScreen(new TexasTripleBurger(), new CustomizeTexasTripleBurger());
                             break;
 
                         case "Angry Chicken":
-                            var entreeAC = new AngryChicken();
-                            var screenAC = new CustomizeAngryChicken();
-                            screenAC.DataContext = entreeAC;
-                            order.Add(entreeAC);
-                            orderControl.SwapScreen(screenAC);
+                            AddItemAndOpenCusomizationScreen(new AngryChicken(), new CustomizeAngryChicken());
                             break;
 
                         case "Chili Cheese Fries":
-                            order.Add(new ChiliCheeseFries());
+                            AddItemAndOpenCusomizationScreen(new ChiliCheeseFries(), new CustomizeChiliCheeseFries());
                             break;
 
                         case "Corn Dodgers":
-                            order.Add(new CornDodgers());
+                            AddItemAndOpenCusomizationScreen(new CornDodgers(), new CustomizeCornDodgers());
                             break;
 
                         case "Pan De Campo":
-                            order.Add(new PanDeCampo());
+                            AddItemAndOpenCusomizationScreen(new PanDeCampo(), new CustomizePanDeCampo());
                             break;
 
                         case "Baked Beans":
-                            order.Add(new BakedBeans());
+                            AddItemAndOpenCusomizationScreen(new BakedBeans(), new CustomizeBakedBeans());
                             break;
 
                         case "Jerked Soda":
-                            var drinkJS = new JerkedSoda();
-                            var screenJS = new CustomizeJerkedSoda();
-                            screenJS.DataContext = drinkJS;
-                            order.Add(drinkJS);
-                            orderControl.SwapScreen(screenJS);
+                            AddItemAndOpenCusomizationScreen(new JerkedSoda(), new CustomizeJerkedSoda());
                             break;
 
                         case "Texas Tea":
-                            var drinkTT = new TexasTea();
-                            var screenTT = new CustomizeTexasTea();
-                            screenTT.DataContext = drinkTT;
-                            order.Add(drinkTT);
-                            orderControl.SwapScreen(screenTT);
+                            AddItemAndOpenCusomizationScreen(new TexasTea(), new CustomizeTexasTea());
                             break;
 
                         case "Cowboy Coffee":
-                            order.Add(new CowboyCoffee());
+                            AddItemAndOpenCusomizationScreen(new CowboyCoffee(), new CustomizeCowboyCoffee());
                             break;
 
                         case "Water":
-                            order.Add(new Water());
+                            AddItemAndOpenCusomizationScreen(new Water(), new CustomizeWater());
                             break;
 
                         default:
@@ -151,6 +119,11 @@ namespace PointOfSale
             if (order == null)
                 throw new Exception("DataContext expected to be Order, instead was null");
 
+            screen.DataContext = item;
+
+            // Add this item to the order.
+            order.Add(item);
+
             // Not all OrderItems need to be customized
             if (screen != null)
             {
@@ -161,9 +134,6 @@ namespace PointOfSale
 
                 orderControl.SwapScreen(screen);
             }
-
-            // Add this item to the order.
-            order.Add(item);
         }
     }
 }

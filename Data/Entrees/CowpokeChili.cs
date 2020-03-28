@@ -13,6 +13,18 @@ namespace CowboyCafe.Data
     {
 
         private bool cheese = true;
+        private string itemType = "Cowpoke Chili";
+
+        /// <summary>
+        /// Item Type for this certain item
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return itemType;
+            }
+        }
 
         /// <summary>
         /// If the chili is topped with cheese

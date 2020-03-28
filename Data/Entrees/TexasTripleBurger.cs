@@ -21,7 +21,18 @@ namespace CowboyCafe.Data
         private bool mayo = true;
         private bool mustard = true;
         private bool pickle = true;
+        private string itemType = "Texas Triple Burger";
 
+        /// <summary>
+        /// Item Type for this certain item
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return itemType;
+            }
+        }
 
         /// <summary>
         /// Price of a Texas Triple

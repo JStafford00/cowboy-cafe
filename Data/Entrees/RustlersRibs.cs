@@ -11,6 +11,19 @@ namespace CowboyCafe.Data
      */
     public class RustlersRibs : Entree
     {
+        private string itemType = "Rustlers Ribs";
+
+        /// <summary>
+        /// Item Type for this certain item
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return itemType;
+            }
+        }
+
         /// <summary>
         /// Price of Rustler Ribs
         /// </summary>

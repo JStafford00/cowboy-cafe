@@ -17,6 +17,11 @@ namespace CowboyCafe.Data
         private Size size;
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public abstract string ItemType
+        {
+            get;
+        }
+
         public abstract string Name
         {
             get;

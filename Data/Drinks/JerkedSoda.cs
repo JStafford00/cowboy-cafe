@@ -13,6 +13,18 @@ namespace CowboyCafe.Data
     {
 
         private SodaFlavor flavor;
+        private string itemType = "Jerked Soda";
+
+        /// <summary>
+        /// Item Type for this certain item
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return itemType;
+            }
+        }
 
 
         /// <summary>

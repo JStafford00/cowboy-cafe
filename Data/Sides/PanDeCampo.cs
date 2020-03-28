@@ -12,6 +12,20 @@ namespace CowboyCafe.Data
      */
     public class PanDeCampo : Side
     {
+
+        private string itemType = "Pan de Campo";
+
+        /// <summary>
+        /// Item Type for this certain item
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return itemType;
+            }
+        }
+
         /// <summary>
         /// Price of Pan de Campo
         /// </summary>

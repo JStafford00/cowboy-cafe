@@ -15,6 +15,18 @@ namespace CowboyCafe.Data
 
         private bool sweet = true;
         private bool lemon = false;
+        private string itemType = "Texas Tea";
+
+        /// <summary>
+        /// Item Type for this certain item
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return itemType;
+            }
+        }
 
         /// <summary>
         /// Price override for a Texas Tea

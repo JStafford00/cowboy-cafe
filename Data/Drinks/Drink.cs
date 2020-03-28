@@ -16,12 +16,31 @@ namespace CowboyCafe.Data
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        private Size size = Size.Small;
+        private bool ice = true;
+
         public abstract string Name { get; }
+
+        public abstract string ItemType
+        {
+            get;
+        }
 
         /// <summary>
         /// Size of the drink
         /// </summary>
-        public Size Size { get; set; } = Size.Small;
+        public Size Size 
+        {
+            get
+            {
+                return size;
+            }
+            set
+            {
+                size = value;
+                NotifyOfPropertyChange("Size");
+            }
+        }
 
         /// <summary>
         /// Price of the drink.
@@ -41,7 +60,19 @@ namespace CowboyCafe.Data
         /// <summary>
         /// If Ice is added.
         /// </summary>
-        public virtual bool Ice { get; set; } = true;
+        public virtual bool Ice 
+        {
+            get
+            {
+                return ice;
+            }
+
+            set
+            {
+                ice = value;
+                NotifyOfPropertyChange("Ice");
+            } 
+        }
 
         /// <summary>
         /// Special Instructions

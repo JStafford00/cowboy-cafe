@@ -9,8 +9,16 @@
     <Grid>
         <StackPanel>
             <TextBlock Text="Customize Texas Tea" FontSize="30"/>
+            <CheckBox IsChecked="{Binding Path=Ice}">Ice</CheckBox>
             <CheckBox IsChecked="{Binding Path=Sweet}">Sweet</CheckBox>
             <CheckBox IsChecked="{Binding Path=Lemon}">Lemon</CheckBox>
+            <GroupBox Header="Size" FontSize="20">
+                <StackPanel>
+                    <RadioButton Tag="Small" Click="RadioButtonClick" FontSize="12" IsChecked="True">Small</RadioButton>
+                    <RadioButton Tag="Medium" Click="RadioButtonClick" FontSize="12">Medium</RadioButton>
+                    <RadioButton Tag="Large" Click="RadioButtonClick" FontSize="12" >Large</RadioButton>
+                </StackPanel>
+            </GroupBox>
         </StackPanel>
     </Grid>
 </UserControl>

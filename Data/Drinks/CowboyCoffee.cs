@@ -15,6 +15,18 @@ namespace CowboyCafe.Data
         private bool ice = false;
         private bool roomForCream = false;
         private bool decaf;
+        private string itemType = "Cowboy Coffee";
+
+        /// <summary>
+        /// Item Type for this certain item
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return itemType;
+            }
+        }
 
         /// <summary>
         /// Price override for a Cowboy Coffee
@@ -71,6 +83,7 @@ namespace CowboyCafe.Data
             set
             {
                 roomForCream = value;
+                NotifyOfPropertyChange("Room For Cream");
             }
         }
 
@@ -87,6 +100,7 @@ namespace CowboyCafe.Data
             set
             {
                 decaf = value;
+                NotifyOfPropertyChange("Decaf");
             }
         }
 
@@ -103,6 +117,7 @@ namespace CowboyCafe.Data
             set
             {
                 ice = value;
+                NotifyOfPropertyChange("Ice");
             }
         }
 

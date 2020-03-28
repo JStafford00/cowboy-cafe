@@ -16,6 +16,8 @@ namespace CowboyCafe.Data
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public abstract string ItemType { get; }
+
         /// <summary>
         /// Price of a entree.
         /// </summary>

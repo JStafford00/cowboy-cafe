@@ -13,6 +13,11 @@ namespace CowboyCafe.DataTests.UnitTests
         public double Price { get; set; }
 
         public List<string> SpecialInstructions { get; set; }
+
+        public string ItemType
+        {
+            get;
+        }
     }
 
     public class OrderTests

@@ -11,6 +11,20 @@ namespace CowboyCafe.Data
      */
     public class CornDodgers : Side
     {
+
+        private string itemType = "Corn Dodgers";
+
+        /// <summary>
+        /// Item Type for this certain item
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return itemType;
+            }
+        }
+
         /// <summary>
         /// Price of Corn Dodgers
         /// </summary>

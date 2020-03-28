@@ -14,6 +14,18 @@ namespace CowboyCafe.Data
 
         private bool bread = true;
         private bool pickle = true;
+        private string itemType = "Angry Chicken";
+
+        /// <summary>
+        /// Item Type for this certain item
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return itemType;
+            }
+        }
 
         public override double Price
         {

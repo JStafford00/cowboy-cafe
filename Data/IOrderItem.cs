@@ -15,6 +15,11 @@ namespace CowboyCafe.Data
         double Price { get; }
 
         /// <summary>
+        /// The item type of the certain IOrderItem
+        /// </summary>
+        string ItemType { get; }
+
+        /// <summary>
         /// The special instructions for this order item.
         /// </summary>
         List<string> SpecialInstructions { get; }

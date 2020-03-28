@@ -9,14 +9,19 @@
     <Grid>
         <StackPanel>
             <TextBlock Text="Customize Jerked Soda" FontSize="30"/>
+            <CheckBox IsChecked="{Binding Path=Ice}">Ice</CheckBox>
             <RadioButton Name="CreamSodaRadioButton" Tag="Cream Soda" Click="FlavorRadioButtonClick" IsChecked="True">Cream Soda</RadioButton>
             <RadioButton Name="OrangeSodaRadioButton" Tag="Orange Soda" Click="FlavorRadioButtonClick">Orange Soda</RadioButton>
             <RadioButton Name="SarsparillaRadioButton" Tag="Sarsparilla" Click="FlavorRadioButtonClick">Sarsparilla</RadioButton>
             <RadioButton Name="BirchBeerRadioButton" Tag="Birch Beer" Click="FlavorRadioButtonClick">Birch Beer</RadioButton>
             <RadioButton Name="RootBeerRadioButton" Tag="Root Beer" Click="FlavorRadioButtonClick">Root Beer</RadioButton>
-
-
-
+            <GroupBox Header="Size" FontSize="20">
+                <StackPanel>
+                    <RadioButton Tag="Small" Click="RadioButtonClick" FontSize="12" IsChecked="True">Small</RadioButton>
+                    <RadioButton Tag="Medium" Click="RadioButtonClick" FontSize="12">Medium</RadioButton>
+                    <RadioButton Tag="Large" Click="RadioButtonClick" FontSize="12">Large</RadioButton>
+                </StackPanel>
+            </GroupBox>
 
         </StackPanel>
     </Grid>

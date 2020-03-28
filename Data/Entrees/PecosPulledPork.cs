@@ -13,6 +13,18 @@ namespace CowboyCafe.Data
     {
         private bool bread = true;
         private bool pickle = true;
+        private string itemType = "Pecos Pulled Pork";
+
+        /// <summary>
+        /// Item Type for this certain item
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return itemType;
+            }
+        }
 
         /// <summary>
         /// Price of a Pecos Pulled Pork.

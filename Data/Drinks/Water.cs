@@ -8,6 +8,18 @@ namespace CowboyCafe.Data
     {
 
         private bool lemon = false;
+        private string itemType = "Water";
+
+        /// <summary>
+        /// Item Type for this certain item
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return itemType;
+            }
+        }
 
         /// <summary>
         /// Price override for a Water
