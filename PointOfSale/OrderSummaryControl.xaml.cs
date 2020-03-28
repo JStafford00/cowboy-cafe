@@ -62,5 +62,29 @@ namespace PointOfSale
                 }
             }
         }
+
+        void OpenCustomizationScreen(IOrderItem item, FrameworkElement screen)
+        {
+            // We need to have an Order to add this item
+            var order = DataContext as Order;
+            if(order == null)
+                throw new Exception("DataContext expected to be Order, instead was null");
+
+            screen.DataContext = item;
+
+            // Add this item to the order.
+            order.Add(item);
+
+            // Not all OrderItems need to be customized
+            if(screen != null)
+            {
+                // We need to have OrderControl ancestor to load the cusomization screen
+                var orderControl = this.FindAncestor<OrderControl>();
+                if(orderControl == null)
+                    throw new Exception("An ancestor of OrderControl expected, instead was null");
+
+                orderControl.SwapScreen(screen);
+            }
+        }
     }
 }
