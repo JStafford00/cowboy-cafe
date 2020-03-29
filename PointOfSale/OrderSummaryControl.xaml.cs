@@ -47,34 +47,60 @@ namespace PointOfSale
                     switch(item.ItemType)
                     {
                         case "Angry Chicken":
-                            var screenAC = new CustomizeAngryChicken();
-                            screenAC.DataContext = item;
-                            orderControl.SwapScreen(screenAC);
+                            OpenCustomizationScreen(item, new CustomizeAngryChicken());
                             break;
                         case "Cowpoke Chili":
-                            var screenCC = new CustomizeCowpokeChili();
-                            screenCC.DataContext = item;
-                            orderControl.SwapScreen(screenCC);
+                            OpenCustomizationScreen(item, new CustomizeCowpokeChili());
+                            break;
+                        case "Pecos Pulled Pork":
+                            OpenCustomizationScreen(item, new CustomizePecosPulledPork());
+                            break;
+                        case "Trail Burger":
+                            OpenCustomizationScreen(item, new CustomizeTrailBurger());
+                            break;
+                        case "Dakota Double Burger":
+                            OpenCustomizationScreen(item, new CustomizeDakotaDoubleBurger());
+                            break;
+                        case "Texas Triple Burger":
+                            OpenCustomizationScreen(item, new CustomizeTexasTripleBurger());
+                            break;
+                        case "Chili Cheese Fries":
+                            OpenCustomizationScreen(item, new CustomizeChiliCheeseFries());
+                            break;
+                        case "Corn Dodgers":
+                            OpenCustomizationScreen(item, new CustomizeCornDodgers());
+                            break;
+                        case "Pan de Campo":
+                            OpenCustomizationScreen(item, new CustomizePanDeCampo());
+                            break;
+                        case "Baked Beans":
+                            OpenCustomizationScreen(item, new CustomizeBakedBeans());
+                            break;
+                        case "Jerked Soda":
+                            OpenCustomizationScreen(item, new CustomizeJerkedSoda());
+                            break;
+                        case "Texas Tea":
+                            OpenCustomizationScreen(item, new CustomizeTexasTea());
+                            break;
+                        case "Cowboy Coffee":
+                            OpenCustomizationScreen(item, new CustomizeCowboyCoffee());
+                            break;
+                        case "Water":
+                            OpenCustomizationScreen(item, new CustomizeWater());
+                            break;
+                        case "Rustlers Ribs":
                             break;
                         default:
                             throw new NotImplementedException();
                     }
+
+                    list.SelectedItem = null;
                 }
             }
         }
 
         void OpenCustomizationScreen(IOrderItem item, FrameworkElement screen)
         {
-            // We need to have an Order to add this item
-            var order = DataContext as Order;
-            if(order == null)
-                throw new Exception("DataContext expected to be Order, instead was null");
-
-            screen.DataContext = item;
-
-            // Add this item to the order.
-            order.Add(item);
-
             // Not all OrderItems need to be customized
             if(screen != null)
             {
@@ -83,6 +109,7 @@ namespace PointOfSale
                 if(orderControl == null)
                     throw new Exception("An ancestor of OrderControl expected, instead was null");
 
+                screen.DataContext = item;
                 orderControl.SwapScreen(screen);
             }
         }

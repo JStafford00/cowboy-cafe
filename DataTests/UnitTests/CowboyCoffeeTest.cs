@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -122,6 +123,51 @@ namespace CowboyCafe.DataTests
             if (!ice && !roomForCream) Assert.Empty(coffee.SpecialInstructions);
             if (ice && !roomForCream || !ice && roomForCream) Assert.Single(coffee.SpecialInstructions);
             if (ice && roomForCream) Assert.Equal(2, coffee.SpecialInstructions.Count);
+        }
+
+        [Fact]
+        public void CowboyCoffeeImplementsINotifyPropertyChanged()
+        {
+            var CC = new CowboyCoffee();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(CC);
+        }
+
+        [Fact]
+        public void ChangingIcePropertyShouldInvokePropertyChangeForIce()
+        {
+            var coffee = new CowboyCoffee();
+            Assert.PropertyChanged(coffee, "Ice", () => { coffee.Ice = false; });
+        }
+
+        [Fact]
+        public void ChangingRoomForCreamPropertyShouldInvokePropertyChangeForRoomForCream()
+        {
+            var coffee = new CowboyCoffee();
+            Assert.PropertyChanged(coffee, "RoomForCream", () => { coffee.RoomForCream = false; });
+        }
+
+        [Fact]
+        public void ChangingDecafPropertyShouldInvokePropertyChangeForDecaf()
+        {
+            var coffee = new CowboyCoffee();
+            Assert.PropertyChanged(coffee, "Decaf", () => { coffee.Decaf = false; });
+        }
+
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForSize()
+        {
+            var coffee = new CowboyCoffee();
+            Assert.PropertyChanged(coffee, "Size", () => { coffee.Size = Size.Small; });
+        }
+
+        [Fact]
+        public void ChangingSpecialInstructionsPropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var coffee = new CowboyCoffee();
+            Assert.PropertyChanged(coffee, "SpecialInstructions", () =>
+            {
+                coffee.Ice = false;
+            });
         }
     }
 }

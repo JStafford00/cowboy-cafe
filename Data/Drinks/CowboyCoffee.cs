@@ -83,7 +83,7 @@ namespace CowboyCafe.Data
             set
             {
                 roomForCream = value;
-                NotifyOfPropertyChange("Room For Cream");
+                NotifyOfPropertyChange("RoomForCream");
             }
         }
 

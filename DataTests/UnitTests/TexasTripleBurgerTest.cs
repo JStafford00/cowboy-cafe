@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -158,6 +159,90 @@ namespace CowboyCafe.DataTests
             Assert.Contains("hold bun", burger.SpecialInstructions);
             Assert.Contains("hold cheese", burger.SpecialInstructions);
             Assert.Contains("hold pickle", burger.SpecialInstructions);
+        }
+
+        [Fact]
+        public void TexasTripleBurgerImplementsINotifyPropertyChanged()
+        {
+            var triple = new TexasTripleBurger();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(triple);
+        }
+
+        [Fact]
+        public void ChangingBunPropertyShouldInvokePropertyChangedForBun()
+        {
+            var triple = new TexasTripleBurger();
+            Assert.PropertyChanged(triple, "Bun", () => { triple.Bun = false; });
+        }
+
+        [Fact]
+        public void ChangingBaconPropertyShouldInvokePropertyChangedForBacon()
+        {
+            var triple = new TexasTripleBurger();
+            Assert.PropertyChanged(triple, "Bacon", () => { triple.Bacon = false; });
+        }
+
+        [Fact]
+        public void ChangingEggPropertyShouldInvokePropertyChangedForEgg()
+        {
+            var triple = new TexasTripleBurger();
+            Assert.PropertyChanged(triple, "Egg", () => { triple.Egg = false; });
+        }
+
+        [Fact]
+        public void ChangingKetchupPropertyShouldInvokePropertyChangedForKetchup()
+        {
+            var triple = new TexasTripleBurger();
+            Assert.PropertyChanged(triple, "Ketchup", () => { triple.Ketchup = false; });
+        }
+
+        [Fact]
+        public void ChangingLettucePropertyShouldInvokePropertyChangedForLettuce()
+        {
+            var triple = new TexasTripleBurger();
+            Assert.PropertyChanged(triple, "Lettuce", () => { triple.Lettuce = false; });
+        }
+
+        [Fact]
+        public void ChangingTomatoPropertyShouldInvokePropertyChangedForTomato()
+        {
+            var triple = new TexasTripleBurger();
+            Assert.PropertyChanged(triple, "Tomato", () => { triple.Tomato = false; });
+        }
+
+        [Fact]
+        public void ChangingCheesePropertyShouldInvokePropertyChangedForCheese()
+        {
+            var triple = new TexasTripleBurger();
+            Assert.PropertyChanged(triple, "Cheese", () => { triple.Cheese = false; });
+        }
+
+        [Fact]
+        public void ChangingMayoPropertyShouldInvokePropertyChangedForMayo()
+        {
+            var triple = new TexasTripleBurger();
+            Assert.PropertyChanged(triple, "Mayo", () => { triple.Mayo = false; });
+        }
+
+        [Fact]
+        public void ChangingMustardPropertyShouldInvokePropertyChangedForMustard()
+        {
+            var triple = new TexasTripleBurger();
+            Assert.PropertyChanged(triple, "Mustard", () => { triple.Mustard = false; });
+        }
+
+        [Fact]
+        public void ChangingPicklePropertyShouldInvokePropertyChangedForPickle()
+        {
+            var triple = new TexasTripleBurger();
+            Assert.PropertyChanged(triple, "Pickle", () => { triple.Pickle = false; });
+        }
+
+        [Fact]
+        public void ChangingSpecialInstructionsPropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var triple = new TexasTripleBurger();
+            Assert.PropertyChanged(triple, "SpecialInstructions", () => { triple.Bun = false; });
         }
     }
 }

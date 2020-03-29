@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -125,6 +126,48 @@ namespace CowboyCafe.DataTests
             if (ice && !lemon) Assert.Empty(tea.SpecialInstructions);
             if (ice && lemon || !ice && !lemon) Assert.Single(tea.SpecialInstructions);
             if (!ice && lemon) Assert.Equal(2, tea.SpecialInstructions.Count);
+        }
+
+        [Fact]
+        public void AngryChickenImplementsINotifyPropertyChanged()
+        {
+            var tea = new TexasTea();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(tea);
+        }
+
+        [Fact]
+        public void ChangingIcePropertyShouldInvokePropertyChangedForIce()
+        {
+            var tea = new TexasTea();
+            Assert.PropertyChanged(tea, "Ice", () => { tea.Ice = false; });
+        }
+
+        [Fact]
+        public void ChangingSweetPropertyShouldInvokePropertyChangedForSweet()
+        {
+            var tea = new TexasTea();
+            Assert.PropertyChanged(tea, "Sweet", () => { tea.Sweet = false; });
+        }
+
+        [Fact]
+        public void ChangingLemonPropertyShouldInvokePropertyChangedForLemon()
+        {
+            var tea = new TexasTea();
+            Assert.PropertyChanged(tea, "Lemon", () => { tea.Lemon = false; });
+        }
+
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForSize()
+        {
+            var tea = new TexasTea();
+            Assert.PropertyChanged(tea, "Size", () => { tea.Size = Size.Small; });
+        }
+
+        [Fact]
+        public void ChangingSpecialInstructionsPropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var tea = new TexasTea();
+            Assert.PropertyChanged(tea, "SpecialInstructions", () => { tea.Ice = false; });
         }
     }
 }

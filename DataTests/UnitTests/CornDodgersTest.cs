@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -51,6 +52,20 @@ namespace CowboyCafe.DataTests
             cd.Size = Size.Medium;
             cd.Size = size;
             Assert.Equal<uint>(calories, cd.Calories);
+        }
+
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForSize()
+        {
+            var corn = new CornDodgers();
+            Assert.PropertyChanged(corn, "Size", () => { corn.Size = Size.Small; });
+        }
+
+        [Fact]
+        public void CornDodgersImplementsINotifyProprertyChanged()
+        {
+            var CD = new CornDodgers();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(CD);
         }
     }
 }

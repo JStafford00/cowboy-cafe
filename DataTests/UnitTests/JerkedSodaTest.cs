@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -114,8 +115,45 @@ namespace CowboyCafe.DataTests
             {
                 Ice = ice
             };
-            if (!ice) Assert.Collection(soda.SpecialInstructions, item => Assert.Equal("Hold Ice", item));
-            if (ice) Assert.Empty(soda.SpecialInstructions);
+            if(!ice)
+                Assert.Collection(soda.SpecialInstructions, item => Assert.Equal("Hold Ice", item));
+            if(ice)
+                Assert.Empty(soda.SpecialInstructions);
+        }
+
+        [Fact]
+        public void JerkedSodaImplementsINotifyPropertyChanged()
+        {
+            var soda = new JerkedSoda();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(soda);
+        }
+
+        [Fact]
+        public void ChangingIcePropertyShouldInvokePropertyChangedForIce()
+        {
+            var soda = new JerkedSoda();
+            Assert.PropertyChanged(soda, "Ice", () => { soda.Ice = false; });
+        }
+
+        [Fact]
+        public void ChangingFlavorPropertyShouldInvokePropertyChangedForFlavor()
+        {
+            var soda = new JerkedSoda();
+            Assert.PropertyChanged(soda, "Flavor", () => { soda.Flavor = SodaFlavor.BirchBeer; });
+        }
+
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForSize()
+        {
+            var soda = new JerkedSoda();
+            Assert.PropertyChanged(soda, "Size", () => { soda.Size = Size.Small; });
+        }
+
+        [Fact]
+        public void ChangingSpecialInstructionsPropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var soda = new JerkedSoda();
+            Assert.PropertyChanged(soda, "SpecialInstructions", () => { soda.Ice = false; });
         }
     }
 }

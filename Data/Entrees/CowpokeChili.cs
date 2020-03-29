@@ -13,6 +13,9 @@ namespace CowboyCafe.Data
     {
 
         private bool cheese = true;
+        private bool sourCream = true;
+        private bool greenOnions = true;
+        private bool tortillaStrips = true;
         private string itemType = "Cowpoke Chili";
 
         /// <summary>
@@ -39,7 +42,6 @@ namespace CowboyCafe.Data
             }
         }
 
-        private bool sourCream = true;
         /// <summary>
         /// If the chili is topped with sour cream
         /// </summary>
@@ -53,7 +55,6 @@ namespace CowboyCafe.Data
             }
         }
 
-        private bool greenOnions = true;
         /// <summary>
         /// If the chili is topped with green onions
         /// </summary>
@@ -67,14 +68,20 @@ namespace CowboyCafe.Data
             }
         }
 
-        private bool tortillaStrips = true;
         /// <summary>
         /// If the chili is topped with tortilla strips
         /// </summary>
         public bool TortillaStrips
         {
-            get { return tortillaStrips; }
-            set { tortillaStrips = value; }
+            get 
+            { 
+                return tortillaStrips; 
+            }
+            set 
+            { 
+                tortillaStrips = value;
+                NotifyOfPropertyChange("TortillaStrips");
+            }
         }
 
         /// <summary>

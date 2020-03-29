@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -136,6 +137,76 @@ namespace CowboyCafe.DataTests
             Assert.Contains("hold bun", burger.SpecialInstructions);
             Assert.Contains("hold cheese", burger.SpecialInstructions);
             Assert.Contains("hold pickle", burger.SpecialInstructions);
+        }
+
+        [Fact]
+        public void DakotaDoubleBurgerImplementsINotifyPropertyChanged()
+        {
+            var dakota = new DakotaDoubleBurger();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(dakota);
+        }
+
+        [Fact]
+        public void ChangingBunPropertyShouldInvokePropertyChangedForBun()
+        {
+            var dakota = new DakotaDoubleBurger();
+            Assert.PropertyChanged(dakota, "Bun", () => { dakota.Bun = false; });
+        }
+
+        [Fact]
+        public void ChangingKetchupPropertyShouldInvokePropertyChangedForKetchup()
+        {
+            var dakota = new DakotaDoubleBurger();
+            Assert.PropertyChanged(dakota, "Ketchup", () => { dakota.Ketchup = false; });
+        }
+
+        [Fact]
+        public void ChangingCheesePropertyShouldInvokePropertyChangedForCheese()
+        {
+            var dakota = new DakotaDoubleBurger();
+            Assert.PropertyChanged(dakota, "Cheese", () => { dakota.Cheese = false; });
+        }
+
+        [Fact]
+        public void ChangingMustardPropertyShouldInvokePropertyChangedForMustard()
+        {
+            var dakota = new DakotaDoubleBurger();
+            Assert.PropertyChanged(dakota, "Mustard", () => { dakota.Mustard = false; });
+        }
+
+        [Fact]
+        public void ChangingPicklePropertyShouldInvokePropertyChangedForPickle()
+        {
+            var dakota = new DakotaDoubleBurger();
+            Assert.PropertyChanged(dakota, "Pickle", () => { dakota.Pickle = false; });
+        }
+
+        [Fact]
+        public void ChangingMayoPropertyShouldInvokePropertyChangedForMayo()
+        {
+            var dakota = new DakotaDoubleBurger();
+            Assert.PropertyChanged(dakota, "Mayo", () => { dakota.Mayo = false; });
+        }
+
+        [Fact]
+        public void ChangingLettucePropertyShouldInvokePropertyChangedForLettuce()
+        {
+            var dakota = new DakotaDoubleBurger();
+            Assert.PropertyChanged(dakota, "Lettuce", () => { dakota.Lettuce = false; });
+        }
+
+        [Fact]
+        public void ChangingTomatoPropertyShouldInvokePropertyChangedForTomato()
+        {
+            var dakota = new DakotaDoubleBurger();
+            Assert.PropertyChanged(dakota, "Tomato", () => { dakota.Tomato = false; });
+        }
+
+        [Fact]
+        public void ChangingSpecialInstructionsPropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var dakota = new DakotaDoubleBurger();
+            Assert.PropertyChanged(dakota, "SpecialInstructions", () => { dakota.Bun = false; });
         }
     }
 }
