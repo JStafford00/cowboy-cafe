@@ -25,6 +25,11 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Click event for remove item button
+        /// </summary>
+        /// <param name="sender">Button being clicked</param>
+        /// <param name="e">Event Args</param>
         private void RemoveItemButton_Click(object sender, EventArgs e)
         {
             if(DataContext is Order data)
@@ -36,6 +41,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Click event for an order item in the order menu
+        /// </summary>
+        /// <param name="sender">Order item being selected</param>
+        /// <param name="e">Selection event args</param>
         private void OrderDisplayClick(object sender, SelectionChangedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
@@ -99,7 +109,12 @@ namespace PointOfSale
             }
         }
 
-        void OpenCustomizationScreen(IOrderItem item, FrameworkElement screen)
+        /// <summary>
+        /// Opens the Customization screen
+        /// </summary>
+        /// <param name="item">Order Item being accessed</param>
+        /// <param name="screen">Screen being opened</param>
+        private void OpenCustomizationScreen(IOrderItem item, FrameworkElement screen)
         {
             // Not all OrderItems need to be customized
             if(screen != null)

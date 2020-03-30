@@ -85,8 +85,13 @@ namespace CowboyCafe.Data
         /// <param name="propertyName"></param>
         protected void NotifyOfPropertyChange(string propertyName)
         {
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            if(propertyName != null)
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+
+
         }
     }
 }

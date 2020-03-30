@@ -112,7 +112,7 @@ namespace PointOfSale
             
         }
 
-        void AddItemAndOpenCusomizationScreen(IOrderItem item, FrameworkElement screen)
+        private void AddItemAndOpenCusomizationScreen(IOrderItem item, FrameworkElement screen)
         {
             // We need to have an Order to add this item
             var order = DataContext as Order;
