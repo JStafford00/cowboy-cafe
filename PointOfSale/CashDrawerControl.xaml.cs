@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Extensions;
 using CowboyCafe.Data;
+using CashRegister;
 
 namespace PointOfSale
 {
@@ -37,6 +38,18 @@ namespace PointOfSale
 
                     var mainWindow = this.FindAncestor<MainWindow>();
                     mainWindow.SwapScreenMain(orderControl);
+
+                    ReceiptPrinter print = new ReceiptPrinter();
+
+                    print.Print(data.OrderNumber.ToString());
+                    print.Print(DateTime.Now.ToString());
+                    foreach(IOrderItem item in data.Items)
+                    {
+                        print.Print(item.ToString() + " : " + item.Price.ToString());
+                        print.Print(item.SpecialInstructions.ToString());
+                    }
+
+                    print.Print(data.Total.ToString());
                 }
 
                 else
