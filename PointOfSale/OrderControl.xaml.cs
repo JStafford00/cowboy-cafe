@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
@@ -59,7 +60,11 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void CompleteOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new Order();
+            var trans = new TransactionControl();
+            trans.DataContext = this.DataContext;
+
+            var mainWindow = this.FindAncestor<MainWindow>();
+            mainWindow.SwapScreenMain(trans);
         }
 
         public void SwapScreen(UIElement element)

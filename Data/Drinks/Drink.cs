@@ -18,12 +18,63 @@ namespace CowboyCafe.Data
 
         private Size size = Size.Small;
         private bool ice = true;
+        private bool isSmall = true;
+        private bool isMedium = false;
+        private bool isLarge = false;
 
         public abstract string Name { get; }
 
         public abstract string ItemType
         {
             get;
+        }
+
+        /// <summary>
+        /// If drink is small.
+        /// </summary>
+        public bool IsSmall
+        {
+            get
+            {
+                return isSmall;
+            }
+
+            set
+            {
+                isSmall = value;
+            }
+        }
+
+        /// <summary>
+        /// If drink is medium.
+        /// </summary>
+        public bool IsMedium
+        {
+            get
+            {
+                return isMedium;
+            }
+
+            set
+            {
+                isMedium = value;
+            }
+        }
+
+        /// <summary>
+        /// If drink is large.
+        /// </summary>
+        public bool IsLarge
+        {
+            get
+            {
+                return isLarge;
+            }
+
+            set
+            {
+                isLarge = value;
+            }
         }
 
         /// <summary>
@@ -39,6 +90,8 @@ namespace CowboyCafe.Data
             {
                 size = value;
                 NotifyOfPropertyChange("Size");
+                NotifyOfPropertyChange("Calories");
+                NotifyOfPropertyChange("Price");
             }
         }
 

@@ -60,6 +60,19 @@ namespace CowboyCafe.DataTests
             var beans = new BakedBeans();
             Assert.PropertyChanged(beans, "Size", () => { beans.Size = Size.Small; });
         }
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForSCalories()
+        {
+            var beans = new BakedBeans();
+            Assert.PropertyChanged(beans, "Calories", () => { beans.Size = Size.Small; });
+        }
+
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForPrice()
+        {
+            var beans = new BakedBeans();
+            Assert.PropertyChanged(beans, "Price", () => { beans.Size = Size.Small; });
+        }
 
         [Fact]
         public void BakedBeansImplementsINotifyPropertyChanged()

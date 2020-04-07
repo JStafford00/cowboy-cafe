@@ -26,9 +26,9 @@
             <CheckBox IsChecked="{Binding Path=RoomForCream}">Room for Cream</CheckBox>
             <GroupBox Header="Size" FontSize="40">
                 <StackPanel>
-                    <RadioButton Tag="Small" Click="RadioButtonClick" IsChecked="true">Small</RadioButton>
-                    <RadioButton Tag="Medium" Click="RadioButtonClick">Medium</RadioButton>
-                    <RadioButton Tag="Large" Click="RadioButtonClick" >Large</RadioButton>
+                    <RadioButton Tag="Small" Click="RadioButtonClick" IsChecked="{Binding Path=IsSmall}">Small</RadioButton>
+                    <RadioButton Tag="Medium" Click="RadioButtonClick" IsChecked="{Binding Path=IsMedium}">Medium</RadioButton>
+                    <RadioButton Tag="Large" Click="RadioButtonClick" IsChecked="{Binding Path=IsLarge}">Large</RadioButton>
                 </StackPanel>
             </GroupBox>
         </StackPanel>

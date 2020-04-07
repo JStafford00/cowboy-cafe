@@ -67,5 +67,19 @@ namespace CowboyCafe.DataTests
             var pan = new PanDeCampo();
             Assert.PropertyChanged(pan, "Size", () => { pan.Size = Size.Small; });
         }
+
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForCalories()
+        {
+            var pan = new PanDeCampo();
+            Assert.PropertyChanged(pan, "Calories", () => { pan.Size = Size.Small; });
+        }
+
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForPrice()
+        {
+            var pan = new PanDeCampo();
+            Assert.PropertyChanged(pan, "Price", () => { pan.Size = Size.Small; });
+        }
     }
 }

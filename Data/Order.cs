@@ -12,11 +12,19 @@ namespace CowboyCafe.Data
      */
     public class Order : INotifyPropertyChanged
     {
-        private static uint lastOrderNumber = 1;
+        private static uint lastOrderNumber = 0;
 
         private List<IOrderItem> items = new List<IOrderItem>();
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Build a new order.
+        /// </summary>
+        public  Order()
+        {
+            lastOrderNumber++;
+        }
 
         /// <summary>
         /// Turns items into an array.
@@ -42,13 +50,31 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
+        /// The total price of all items after tax.
+        /// </summary>
+        public double Total
+        {
+            get
+            {
+                double total = 0.0;
+
+                foreach(IOrderItem item in Items)
+                {
+                    total += item.Price;
+                }
+
+                return total * 1.16;
+            }
+        }
+
+        /// <summary>
         /// The current order number
         /// </summary>
         public uint OrderNumber
         {
             get
             {
-                return lastOrderNumber++;
+                return lastOrderNumber;
             }
         }
 

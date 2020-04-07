@@ -15,6 +15,9 @@ namespace CowboyCafe.Data
     {
 
         private Size size;
+        private bool isSmall = true;
+        private bool isMedium = false;
+        private bool isLarge = false;
         public event PropertyChangedEventHandler PropertyChanged;
 
         public abstract string ItemType
@@ -43,6 +46,54 @@ namespace CowboyCafe.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+            }
+        }
+
+        /// <summary>
+        /// If side is small.
+        /// </summary>
+        public bool IsSmall
+        {
+            get
+            {
+                return isSmall;
+            }
+
+            set
+            {
+                isSmall = value;
+            }
+        }
+
+        /// <summary>
+        /// If side is medium.
+        /// </summary>
+        public bool IsMedium
+        {
+            get
+            {
+                return isMedium;
+            }
+
+            set
+            {
+                isMedium = value;
+            }
+        }
+
+        /// <summary>
+        /// If side is large.
+        /// </summary>
+        public bool IsLarge
+        {
+            get
+            {
+                return isLarge;
+            }
+
+            set
+            {
+                isLarge = value;
             }
         }
 

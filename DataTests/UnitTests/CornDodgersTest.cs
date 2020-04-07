@@ -62,6 +62,20 @@ namespace CowboyCafe.DataTests
         }
 
         [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForCalories()
+        {
+            var corn = new CornDodgers();
+            Assert.PropertyChanged(corn, "Calories", () => { corn.Size = Size.Small; });
+        }
+
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForPrice()
+        {
+            var corn = new CornDodgers();
+            Assert.PropertyChanged(corn, "Price", () => { corn.Size = Size.Small; });
+        }
+
+        [Fact]
         public void CornDodgersImplementsINotifyProprertyChanged()
         {
             var CD = new CornDodgers();

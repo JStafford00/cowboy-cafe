@@ -62,6 +62,20 @@ namespace CowboyCafe.DataTests
         }
 
         [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForCalories()
+        {
+            var fries = new ChiliCheeseFries();
+            Assert.PropertyChanged(fries, "Calories", () => { fries.Size = Size.Small; });
+        }
+
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForPrice()
+        {
+            var fries = new ChiliCheeseFries();
+            Assert.PropertyChanged(fries, "Price", () => { fries.Size = Size.Small; });
+        }
+
+        [Fact]
         public void ChiliCheeseFriesImplementsINotifyPropertyChanged()
         {
             var fries = new ChiliCheeseFries();

@@ -150,6 +150,20 @@ namespace CowboyCafe.DataTests
         }
 
         [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForCalories()
+        {
+            var soda = new JerkedSoda();
+            Assert.PropertyChanged(soda, "Calories", () => { soda.Size = Size.Small; });
+        }
+
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForPrice()
+        {
+            var soda = new JerkedSoda();
+            Assert.PropertyChanged(soda, "Price", () => { soda.Size = Size.Small; });
+        }
+
+        [Fact]
         public void ChangingSpecialInstructionsPropertyShouldInvokePropertyChangedForSpecialInstructions()
         {
             var soda = new JerkedSoda();

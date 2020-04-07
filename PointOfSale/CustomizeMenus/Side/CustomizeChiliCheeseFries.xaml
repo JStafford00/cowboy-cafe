@@ -19,9 +19,9 @@
             <TextBlock Text="Customize Chili Cheese Fries" FontSize="50"/>
             <GroupBox Header="Size" FontSize="20">
                 <StackPanel>
-                    <RadioButton Tag="Small" Click="RadioButtonClick" IsChecked="True">Small</RadioButton>
-                    <RadioButton Tag="Medium" Click="RadioButtonClick">Medium</RadioButton>
-                    <RadioButton Tag="Large" Click="RadioButtonClick">Large</RadioButton>
+                    <RadioButton Tag="Small" Click="RadioButtonClick" IsChecked="{Binding Path=IsSmall}">Small</RadioButton>
+                    <RadioButton Tag="Medium" Click="RadioButtonClick" IsChecked="{Binding Path=IsMedium}">Medium</RadioButton>
+                    <RadioButton Tag="Large" Click="RadioButtonClick" IsChecked="{Binding Path=IsLarge}">Large</RadioButton>
                 </StackPanel>
             </GroupBox>
         </StackPanel>
