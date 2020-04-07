@@ -50,7 +50,7 @@ namespace PointOfSale
                         ReceiptPrinter print = new ReceiptPrinter();
 
                         print.Print(data.OrderNumber.ToString());
-                        print.Print(DateTime.Now);
+                        print.Print(DateTime.Now.ToString());
                         foreach(IOrderItem item in data.Items)
                         {
                             print.Print(item.ToString() +" : " + item.Price.ToString());
