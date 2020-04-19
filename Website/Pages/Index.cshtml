@@ -1,0 +1,75 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Cowboy Cafe</h1>
+    <p>
+        We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. 
+        Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas. 
+        Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger! 
+        You’ve had a hard ride - so take it easy with us.
+    </p>
+</div>
+
+<h2>Entrees</h2>
+<ul class="entree-list">
+    @foreach(CowboyCafe.Data.Entree entree in CowboyCafe.Data.Menu.Entrees())
+    {
+        <li>
+            <div class="menu-item">
+                <h3>@entree.ItemType</h3>
+                <div>
+                    Calories: @entree.Calories
+                </div>
+                <div class="price-details">
+                    Price: $@entree.Price
+                </div>
+            </div>
+        </li>
+    }
+</ul>
+
+<h2>Sides</h2>
+<ul class="side-list">
+    @foreach(CowboyCafe.Data.Side side in CowboyCafe.Data.Menu.Sides())
+    {
+        <li>
+            <div class="menu-item">
+                <h3>@side.ItemType</h3>
+                <div>
+                    <h4>Small</h4>
+                </div>
+                <div>
+                    <h4>Medium</h4>
+                </div>
+                <div>
+                    <h4>Large</h4>
+                </div>
+            </div>
+        </li>
+    }
+</ul>
+
+<h2>Drinks</h2>
+<ul class="drink-list">
+    @foreach(CowboyCafe.Data.Drink drink in CowboyCafe.Data.Menu.Drinks())
+    {
+        <li>
+            <div class="menu-item">
+                <h3>@drink.ItemType</h3>
+                <div>
+                    <h4>Small</h4>
+                </div>
+                <div>
+                    <h4>Medium</h4>
+                </div>
+                <div>
+                    <h4>Large</h4>
+                </div>
+            </div>
+        </li>
+    }
+</ul>
