@@ -14,60 +14,96 @@
     </p>
 </div>
 
-<h2>Entrees</h2>
+<h2 style="border-bottom: 3px solid black">Entrees</h2>
 <ul class="entree-list">
     @foreach(CowboyCafe.Data.Entree entree in CowboyCafe.Data.Menu.Entrees())
     {
         <li>
-            <div class="menu-item">
+            <div class="menu-item" style="border-bottom: 1px solid gray;">
                 <h3>@entree.ItemType</h3>
                 <div>
-                    Calories: @entree.Calories
+                    Calories: @entree.Calories.ToString()
                 </div>
                 <div class="price-details">
-                    Price: $@entree.Price
+                    Price: $@entree.Price.ToString()
                 </div>
             </div>
         </li>
     }
 </ul>
 
-<h2>Sides</h2>
+<h2 style="border-bottom: 3px solid black">Sides</h2>
 <ul class="side-list">
     @foreach(CowboyCafe.Data.Side side in CowboyCafe.Data.Menu.Sides())
     {
         <li>
-            <div class="menu-item">
+            <div class="menu-item" style="border-bottom: 1px solid gray;">
                 <h3>@side.ItemType</h3>
                 <div>
-                    <h4>Small</h4>
+                    <h4>@(side.Size = CowboyCafe.Data.Size.Small)</h4>
+                    <div>
+                        Calories: @side.Calories.ToString()
+                    </div>
+                    <div>
+                        Price: @side.Price.ToString()
+                    </div>
                 </div>
                 <div>
-                    <h4>Medium</h4>
+                    <h4>@(side.Size = CowboyCafe.Data.Size.Medium)</h4>
+                    <div>
+                        Calories: @side.Calories.ToString()
+                    </div>
+                    <div>
+                        Price: @side.Price.ToString()
+                    </div>
                 </div>
                 <div>
-                    <h4>Large</h4>
+                    <h4>@(side.Size = CowboyCafe.Data.Size.Large)</h4>
+                    <div>
+                        Calories: @side.Calories.ToString()
+                    </div>
+                    <div>
+                        Price: @side.Price.ToString()
+                    </div>
                 </div>
             </div>
         </li>
     }
 </ul>
 
-<h2>Drinks</h2>
+<h2 style="border-bottom: 3px solid black">Drinks</h2>
 <ul class="drink-list">
     @foreach(CowboyCafe.Data.Drink drink in CowboyCafe.Data.Menu.Drinks())
     {
         <li>
-            <div class="menu-item">
+            <div class="menu-item" style="border-bottom: 1px solid gray;">
                 <h3>@drink.ItemType</h3>
                 <div>
-                    <h4>Small</h4>
+                    <h4>@(drink.Size = CowboyCafe.Data.Size.Small)</h4>
+                    <div>
+                        Calories: @drink.Calories.ToString()
+                    </div>
+                    <div>
+                        Price: @drink.Price.ToString()
+                    </div>
                 </div>
                 <div>
-                    <h4>Medium</h4>
+                    <h4>@(drink.Size = CowboyCafe.Data.Size.Medium)</h4>
+                    <div>
+                        Calories: @drink.Calories.ToString()
+                    </div>
+                    <div>
+                        Price: @drink.Price.ToString()
+                    </div>
                 </div>
                 <div>
-                    <h4>Large</h4>
+                    <h4>@(drink.Size = CowboyCafe.Data.Size.Large)</h4>
+                    <div>
+                        Calories: @drink.Calories.ToString()
+                    </div>
+                    <div>
+                        Price: @drink.Price.ToString()
+                    </div>
                 </div>
             </div>
         </li>
