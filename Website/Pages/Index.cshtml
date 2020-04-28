@@ -3,109 +3,142 @@
 @{
     ViewData["Title"] = "Home page";
 }
+    <form style="display: grid; grid-template-columns: 8ch auto; grid-template-rows:auto auto">
+        <div style="grid-column-start: 1; grid-column-end: 3; text-align: center">
+            <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+            <input type="submit" value="Search">
+        </div>
 
-<div class="text-center">
-    <h1 class="display-4">Cowboy Cafe</h1>
-    <p>
-        We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. 
-        Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas. 
-        Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger! 
-        You’ve had a hard ride - so take it easy with us.
-    </p>
-</div>
-
-<h2 style="border-bottom: 3px solid black">Entrees</h2>
-<ul class="entree-list">
-    @foreach(CowboyCafe.Data.Entree entree in CowboyCafe.Data.Menu.Entrees())
-    {
-        <li>
-            <div class="menu-item" style="border-bottom: 1px solid gray;">
-                <h3>@entree.ItemType</h3>
-                <div>
-                    Calories: @entree.Calories.ToString()
-                </div>
-                <div class="price-details">
-                    Price: $@entree.Price.ToString()
-                </div>
+        <div style="grid-column-start: 1; grid-column-end: 3; display: flex; flex-direction: column">
+            <h4>Item Type</h4>
+            @foreach(string itemType in CowboyCafe.Data.Menu.ItemTypes)
+            {
+                <label>
+                    <input type="checkbox" name="ItemTypes" value="@itemType" checked="@Model.ItemTypes?.Contains(@itemType)" />
+                    @itemType
+                </label>
+            }
+            <h4>Calories</h4>
+            <div>
+                Between
+                <input name="CalMin" value="CalMin" type="number" min="0" max="1000" step="1" placeholder="min" />
+                and
+                <input name="CalMax" value="CalMax" type="number" min="0" max="1000" step="1" placeholder="max" />
             </div>
-        </li>
-    }
-</ul>
-
-<h2 style="border-bottom: 3px solid black">Sides</h2>
-<ul class="side-list">
-    @foreach(CowboyCafe.Data.Side side in CowboyCafe.Data.Menu.Sides())
-    {
-        <li>
-            <div class="menu-item" style="border-bottom: 1px solid gray;">
-                <h3>@side.ItemType</h3>
-                <div>
-                    <h4>@(side.Size = CowboyCafe.Data.Size.Small)</h4>
-                    <div>
-                        Calories: @side.Calories.ToString()
-                    </div>
-                    <div>
-                        Price: @side.Price.ToString()
-                    </div>
-                </div>
-                <div>
-                    <h4>@(side.Size = CowboyCafe.Data.Size.Medium)</h4>
-                    <div>
-                        Calories: @side.Calories.ToString()
-                    </div>
-                    <div>
-                        Price: @side.Price.ToString()
-                    </div>
-                </div>
-                <div>
-                    <h4>@(side.Size = CowboyCafe.Data.Size.Large)</h4>
-                    <div>
-                        Calories: @side.Calories.ToString()
-                    </div>
-                    <div>
-                        Price: @side.Price.ToString()
-                    </div>
-                </div>
+            <h4>Price</h4>
+            <div>
+                Between
+                <input name="PriceMin" value="PriceMin" type="number" min="0" max="20" step="0.01" placeholder="min" />
+                and
+                <input name="PriceMax" value="PriceMax" type="number" min="0" max="20" step="0.01" placeholder="max" />
             </div>
-        </li>
-    }
-</ul>
+        </div>
 
-<h2 style="border-bottom: 3px solid black">Drinks</h2>
-<ul class="drink-list">
-    @foreach(CowboyCafe.Data.Drink drink in CowboyCafe.Data.Menu.Drinks())
-    {
-        <li>
-            <div class="menu-item" style="border-bottom: 1px solid gray;">
-                <h3>@drink.ItemType</h3>
-                <div>
-                    <h4>@(drink.Size = CowboyCafe.Data.Size.Small)</h4>
-                    <div>
-                        Calories: @drink.Calories.ToString()
-                    </div>
-                    <div>
-                        Price: @drink.Price.ToString()
-                    </div>
-                </div>
-                <div>
-                    <h4>@(drink.Size = CowboyCafe.Data.Size.Medium)</h4>
-                    <div>
-                        Calories: @drink.Calories.ToString()
-                    </div>
-                    <div>
-                        Price: @drink.Price.ToString()
-                    </div>
-                </div>
-                <div>
-                    <h4>@(drink.Size = CowboyCafe.Data.Size.Large)</h4>
-                    <div>
-                        Calories: @drink.Calories.ToString()
-                    </div>
-                    <div>
-                        Price: @drink.Price.ToString()
-                    </div>
-                </div>
-            </div>
-        </li>
-    }
-</ul>
+        <div style="grid-column: 3; text-align: center">
+            <h1 class="display-4">Cowboy Cafe</h1>
+            <p>
+                We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
+                Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas.
+                Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger!
+                You’ve had a hard ride - so take it easy with us.
+            </p>
+        </div>
+
+        <div style="grid-column: 3;">
+            <h2 style="border-bottom: 3px solid black">Entrees</h2>
+            <ul class="entree-list">
+                @foreach(CowboyCafe.Data.Entree entree in Model.Items.OfType<CowboyCafe.Data.Entree>())
+                {
+                    <li>
+                        <div class="menu-item" style="border-bottom: 1px solid gray;">
+                            <h3>@entree.ItemType</h3>
+                            <div>
+                                Calories: @entree.Calories.ToString()
+                            </div>
+                            <div class="price-details">
+                                Price: $@entree.Price.ToString()
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+
+            <h2 style="border-bottom: 3px solid black">Sides</h2>
+            <ul class="side-list">
+                @foreach(CowboyCafe.Data.Side side in Model.Items.OfType<CowboyCafe.Data.Side>())
+                {
+                    <li>
+                        <div class="menu-item" style="border-bottom: 1px solid gray;">
+                            <h3>@side.ItemType</h3>
+                            <div>
+                                <h4>@(side.Size = CowboyCafe.Data.Size.Small)</h4>
+                                <div>
+                                    Calories: @side.Calories.ToString()
+                                </div>
+                                <div>
+                                    Price: @side.Price.ToString()
+                                </div>
+                            </div>
+                            <div>
+                                <h4>@(side.Size = CowboyCafe.Data.Size.Medium)</h4>
+                                <div>
+                                    Calories: @side.Calories.ToString()
+                                </div>
+                                <div>
+                                    Price: @side.Price.ToString()
+                                </div>
+                            </div>
+                            <div>
+                                <h4>@(side.Size = CowboyCafe.Data.Size.Large)</h4>
+                                <div>
+                                    Calories: @side.Calories.ToString()
+                                </div>
+                                <div>
+                                    Price: @side.Price.ToString()
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+
+            <h2 style="border-bottom: 3px solid black">Drinks</h2>
+            <ul class="drink-list">
+                @foreach(CowboyCafe.Data.Drink drink in Model.Items.OfType<CowboyCafe.Data.Drink>())
+                {
+                    <li>
+                        <div class="menu-item" style="border-bottom: 1px solid gray;">
+                            <h3>@drink.ItemType</h3>
+                            <div>
+                                <h4>@(drink.Size = CowboyCafe.Data.Size.Small)</h4>
+                                <div>
+                                    Calories: @drink.Calories.ToString()
+                                </div>
+                                <div>
+                                    Price: @drink.Price.ToString()
+                                </div>
+                            </div>
+                            <div>
+                                <h4>@(drink.Size = CowboyCafe.Data.Size.Medium)</h4>
+                                <div>
+                                    Calories: @drink.Calories.ToString()
+                                </div>
+                                <div>
+                                    Price: @drink.Price.ToString()
+                                </div>
+                            </div>
+                            <div>
+                                <h4>@(drink.Size = CowboyCafe.Data.Size.Large)</h4>
+                                <div>
+                                    Calories: @drink.Calories.ToString()
+                                </div>
+                                <div>
+                                    Price: @drink.Price.ToString()
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </form>

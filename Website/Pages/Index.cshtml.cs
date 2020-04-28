@@ -18,9 +18,65 @@ namespace Website.Pages
             _logger = logger;
         }
 
+        public IEnumerable<IOrderItem> Items
+        {
+            get;
+            protected set;
+        }
+
+        [BindProperty]
+        public string SearchTerms
+        {
+            get;
+            set;
+        } = "";
+
+        [BindProperty]
+        public string[] ItemTypes
+        {
+            get;
+            set;
+        }
+
+        [BindProperty]
+        public string CalMin
+        {
+            get;
+            set;
+        }
+
+        [BindProperty]
+        public string CalMax
+        {
+            get;
+            set;
+        }
+
+        [BindProperty]
+        public string PriceMin
+        {
+            get;
+            set;
+        }
+
+        [BindProperty]
+        public string PriceMax
+        {
+            get;
+            set;
+        }
+
         public void OnGet()
         {
-
+            SearchTerms = Request.Query["SearchTerms"];
+            ItemTypes = Request.Query["ItemTypes"];
+            CalMin = Request.Query["CalMin"];
+            CalMax = Request.Query["CalMax"];
+            PriceMin = Request.Query["PriceMin"];
+            PriceMax = Request.Query["PriceMax"];
+            Items = CowboyCafe.Data.Menu.Search(SearchTerms);
+            Items = CowboyCafe.Data.Menu.FilterByItemType(Items, ItemTypes);
+            Items = CowboyCafe.Data.Menu.FilterByCalories(Items, CalMin, CalMax);
         }
     }
 }
