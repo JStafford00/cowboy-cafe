@@ -109,6 +109,9 @@ namespace CowboyCafe.Data
             return results;
         }
 
+        /// <summary>
+        /// The item types.
+        /// </summary>
         public static string[] ItemTypes
         {
             get => new string[]
@@ -119,7 +122,13 @@ namespace CowboyCafe.Data
             };
         }
 
-        public static IEnumerable<IOrderItem> FilterByItemType(IEnumerable<IOrderItem> items, IEnumerable<string> types)
+        /// <summary>
+        /// Filters the search by item type
+        /// </summary>
+        /// <param name="items">items being filtered</param>
+        /// <param name="types"> types</param>
+        /// <returns>filtered items</returns>
+        public static IEnumerable<IOrderItem> FilterByCatagory(IEnumerable<IOrderItem> items, IEnumerable<string> types)
         {
             if(types == null || types.Count() == 0)
                 return items;
@@ -153,6 +162,13 @@ namespace CowboyCafe.Data
             return results;
         }
 
+        /// <summary>
+        /// Filters items by calories
+        /// </summary>
+        /// <param name="items">Items being filtered</param>
+        /// <param name="calMin">Minimum calories</param>
+        /// <param name="calMax">Max calories</param>
+        /// <returns></returns>
         public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> items, string calMin, string calMax)
         {
             int min = 0;
@@ -200,6 +216,13 @@ namespace CowboyCafe.Data
             return results;
         }
 
+        /// <summary>
+        /// Filters search by price
+        /// </summary>
+        /// <param name="items">Items being filtered</param>
+        /// <param name="priceMin">Minimum price</param>
+        /// <param name="priceMax">Max price</param>
+        /// <returns></returns>
         public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> items, string priceMin, string priceMax)
         {
             List<IOrderItem> results = new List<IOrderItem>();

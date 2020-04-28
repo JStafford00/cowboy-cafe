@@ -18,12 +18,18 @@ namespace Website.Pages
             _logger = logger;
         }
 
+        /// <summary>
+        /// Items being searched
+        /// </summary>
         public IEnumerable<IOrderItem> Items
         {
             get;
             protected set;
         }
 
+        /// <summary>
+        /// Terms being searched for
+        /// </summary>
         [BindProperty]
         public string SearchTerms
         {
@@ -31,6 +37,9 @@ namespace Website.Pages
             set;
         } = "";
 
+        /// <summary>
+        /// Item types being searched for
+        /// </summary>
         [BindProperty]
         public string[] ItemTypes
         {
@@ -38,6 +47,9 @@ namespace Website.Pages
             set;
         }
 
+        /// <summary>
+        /// Minimum calories being searched
+        /// </summary>
         [BindProperty]
         public string CalMin
         {
@@ -45,6 +57,9 @@ namespace Website.Pages
             set;
         }
 
+        /// <summary>
+        /// Max calories being searched
+        /// </summary>
         [BindProperty]
         public string CalMax
         {
@@ -52,6 +67,9 @@ namespace Website.Pages
             set;
         }
 
+        /// <summary>
+        /// Min price being searched
+        /// </summary>
         [BindProperty]
         public string PriceMin
         {
@@ -59,6 +77,9 @@ namespace Website.Pages
             set;
         }
 
+        /// <summary>
+        /// Max price being searched
+        /// </summary>
         [BindProperty]
         public string PriceMax
         {
@@ -66,6 +87,9 @@ namespace Website.Pages
             set;
         }
 
+        /// <summary>
+        /// After every page refresh
+        /// </summary>
         public void OnGet()
         {
             SearchTerms = Request.Query["SearchTerms"];
@@ -75,7 +99,7 @@ namespace Website.Pages
             PriceMin = Request.Query["PriceMin"];
             PriceMax = Request.Query["PriceMax"];
             Items = CowboyCafe.Data.Menu.Search(SearchTerms);
-            Items = CowboyCafe.Data.Menu.FilterByItemType(Items, ItemTypes);
+            Items = CowboyCafe.Data.Menu.FilterByCatagory(Items, ItemTypes);
             Items = CowboyCafe.Data.Menu.FilterByCalories(Items, CalMin, CalMax);
         }
     }
