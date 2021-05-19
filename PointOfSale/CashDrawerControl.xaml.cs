@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CowboyCafe.Extensions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using CowboyCafe.Extensions;
-using CowboyCafe.Data;
-using CashRegister;
 
 namespace PointOfSale
 {
@@ -30,9 +18,9 @@ namespace PointOfSale
 
         private void CompleteTransactionButtonClick(object sender, RoutedEventArgs e)
         {
-            if(DataContext is CashRegisterModelView data)
+            if (DataContext is CashRegisterModelView data)
             {
-                if(data.AmountNeeded > -0.01 && data.AmountNeeded < 0.01)
+                if (data.AmountNeeded > -0.01 && data.AmountNeeded < 0.01)
                 {
                     var orderControl = new OrderControl();
 

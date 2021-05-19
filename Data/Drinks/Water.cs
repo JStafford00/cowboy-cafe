@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {
@@ -28,7 +27,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                switch(Size)
+                switch (Size)
                 {
                     case Size.Small:
                         return 0.12;
@@ -49,7 +48,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                switch(Size)
+                switch (Size)
                 {
                     case Size.Small:
                         return 0;
@@ -90,9 +89,9 @@ namespace CowboyCafe.Data
             {
                 var instructions = new List<string>();
 
-                if(!Ice)
+                if (!Ice)
                     instructions.Add("Hold Ice");
-                if(lemon)
+                if (lemon)
                     instructions.Add("Add Lemon");
 
                 return instructions;
@@ -106,7 +105,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                switch(Size)
+                switch (Size)
                 {
                     case Size.Small:
                         return "Small Water";

@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CowboyCafe.Data;
+using CowboyCafe.Extensions;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using CowboyCafe.Data;
-using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
@@ -32,9 +23,9 @@ namespace PointOfSale
         /// <param name="e">Event Args</param>
         private void RemoveItemButton_Click(object sender, EventArgs e)
         {
-            if(DataContext is Order data)
+            if (DataContext is Order data)
             {
-                if(sender is Button button)
+                if (sender is Button button)
                 {
                     data.Remove((IOrderItem)button.DataContext);
                 }
@@ -50,11 +41,11 @@ namespace PointOfSale
         {
             var orderControl = this.FindAncestor<OrderControl>();
 
-            if(sender is ListBox list)
+            if (sender is ListBox list)
             {
-                if(list.SelectedItem is IOrderItem item)
+                if (list.SelectedItem is IOrderItem item)
                 {
-                    switch(item.ItemType)
+                    switch (item.ItemType)
                     {
                         case "Angry Chicken":
                             OpenCustomizationScreen(item, new CustomizeAngryChicken());
@@ -117,11 +108,11 @@ namespace PointOfSale
         private void OpenCustomizationScreen(IOrderItem item, FrameworkElement screen)
         {
             // Not all OrderItems need to be customized
-            if(screen != null)
+            if (screen != null)
             {
                 // We need to have OrderControl ancestor to load the cusomization screen
                 var orderControl = this.FindAncestor<OrderControl>();
-                if(orderControl == null)
+                if (orderControl == null)
                     throw new Exception("An ancestor of OrderControl expected, instead was null");
 
                 screen.DataContext = item;

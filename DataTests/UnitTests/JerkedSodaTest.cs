@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xunit;
-using CowboyCafe.Data;
+﻿using CowboyCafe.Data;
+using System;
 using System.ComponentModel;
+using Xunit;
 
 namespace CowboyCafe.DataTests
 {
@@ -115,9 +113,9 @@ namespace CowboyCafe.DataTests
             {
                 Ice = ice
             };
-            if(!ice)
+            if (!ice)
                 Assert.Collection(soda.SpecialInstructions, item => Assert.Equal("Hold Ice", item));
-            if(ice)
+            if (ice)
                 Assert.Empty(soda.SpecialInstructions);
         }
 

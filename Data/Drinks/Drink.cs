@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.ComponentModel;
 
 namespace CowboyCafe.Data
@@ -80,7 +79,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Size of the drink
         /// </summary>
-        public Size Size 
+        public Size Size
         {
             get
             {
@@ -113,7 +112,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// If Ice is added.
         /// </summary>
-        public virtual bool Ice 
+        public virtual bool Ice
         {
             get
             {
@@ -124,7 +123,7 @@ namespace CowboyCafe.Data
             {
                 ice = value;
                 NotifyOfPropertyChange("Ice");
-            } 
+            }
         }
 
         /// <summary>
@@ -138,7 +137,7 @@ namespace CowboyCafe.Data
         /// <param name="propertyName"></param>
         protected void NotifyOfPropertyChange(string propertyName)
         {
-            if(propertyName != null)
+            if (propertyName != null)
             {
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));

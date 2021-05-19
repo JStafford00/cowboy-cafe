@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics.CodeAnalysis;
 
 namespace CowboyCafe.Data
 {
@@ -22,7 +19,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Build a new order.
         /// </summary>
-        public  Order()
+        public Order()
         {
             lastOrderNumber++;
         }
@@ -59,7 +56,7 @@ namespace CowboyCafe.Data
             {
                 double total = 0.0;
 
-                foreach(IOrderItem item in Items)
+                foreach (IOrderItem item in Items)
                 {
                     total += item.Price;
                 }

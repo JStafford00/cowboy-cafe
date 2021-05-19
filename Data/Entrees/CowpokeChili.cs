@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 
 namespace CowboyCafe.Data
 {
@@ -35,8 +33,8 @@ namespace CowboyCafe.Data
         public bool Cheese
         {
             get { return cheese; }
-            set 
-            { 
+            set
+            {
                 cheese = value;
                 NotifyOfPropertyChange("Cheese");
             }
@@ -48,8 +46,8 @@ namespace CowboyCafe.Data
         public bool SourCream
         {
             get { return sourCream; }
-            set 
-            { 
+            set
+            {
                 sourCream = value;
                 NotifyOfPropertyChange("SourCream");
             }
@@ -61,8 +59,8 @@ namespace CowboyCafe.Data
         public bool GreenOnions
         {
             get { return greenOnions; }
-            set 
-            { 
+            set
+            {
                 greenOnions = value;
                 NotifyOfPropertyChange("GreenOnions");
             }
@@ -73,12 +71,12 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool TortillaStrips
         {
-            get 
-            { 
-                return tortillaStrips; 
+            get
+            {
+                return tortillaStrips;
             }
-            set 
-            { 
+            set
+            {
                 tortillaStrips = value;
                 NotifyOfPropertyChange("TortillaStrips");
             }
@@ -139,7 +137,7 @@ namespace CowboyCafe.Data
             }
         }
 
-        
+
     }
 }
 

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace CowboyCafe.Data
 {
@@ -108,7 +106,7 @@ namespace CowboyCafe.Data
                     instructions.Add("hold bread");
                 if (!pickle)
                     instructions.Add("hold pickle");
-                
+
 
                 return instructions;
             }

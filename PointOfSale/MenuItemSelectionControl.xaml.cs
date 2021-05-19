@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CowboyCafe.Data;
+using CowboyCafe.Extensions;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using CowboyCafe.Data;
-using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
@@ -36,7 +27,7 @@ namespace PointOfSale
 
             var orderControl = this.FindAncestor<OrderControl>();
 
-            if(DataContext is Order order)
+            if (DataContext is Order order)
             {
 
                 if (sender is Button button)
@@ -109,7 +100,7 @@ namespace PointOfSale
                     }
                 }
             }
-            
+
         }
 
         private void AddItemAndOpenCusomizationScreen(IOrderItem item, FrameworkElement screen)

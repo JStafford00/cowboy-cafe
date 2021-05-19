@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using CashRegister;
+﻿using CashRegister;
 using CowboyCafe.Data;
 using CowboyCafe.Extensions;
+using System;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace PointOfSale
 {
@@ -33,11 +24,11 @@ namespace PointOfSale
         {
             var card = new CardTerminal();
 
-            if(DataContext is Order data)
+            if (DataContext is Order data)
             {
                 ResultCode result = card.ProcessTransaction(data.Total);
 
-                switch(result)
+                switch (result)
                 {
                     case ResultCode.Success:
                         ReceiptPrinter receiptPrinter = new ReceiptPrinter();
@@ -51,9 +42,9 @@ namespace PointOfSale
 
                         print.Print(data.OrderNumber.ToString());
                         print.Print(DateTime.Now.ToString());
-                        foreach(IOrderItem item in data.Items)
+                        foreach (IOrderItem item in data.Items)
                         {
-                            print.Print(item.ToString() +" : " + item.Price.ToString());
+                            print.Print(item.ToString() + " : " + item.Price.ToString());
                             print.Print(item.SpecialInstructions.ToString());
                         }
 
@@ -83,9 +74,9 @@ namespace PointOfSale
         private void CashButtonClick(object sender, RoutedEventArgs e)
         {
             CashDrawerControl screen = new CashDrawerControl();
-            if(DataContext is Order order)
+            if (DataContext is Order order)
             {
-                if(screen.DataContext is CashRegisterModelView data)
+                if (screen.DataContext is CashRegisterModelView data)
                 {
                     data.AmountNeeded = order.Total;
                 }

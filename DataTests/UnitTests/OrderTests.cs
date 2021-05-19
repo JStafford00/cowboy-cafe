@@ -1,9 +1,7 @@
-﻿using System;
+﻿using CowboyCafe.Data;
 using System.Collections.Generic;
-using System.Text;
-using CowboyCafe.Data;
-using Xunit;
 using System.Linq;
+using Xunit;
 
 namespace CowboyCafe.DataTests.UnitTests
 {
@@ -49,18 +47,18 @@ namespace CowboyCafe.DataTests.UnitTests
 
         // Get the price - needs to be right (for the items we've added)
         [Theory]
-        [InlineData(new double[] {})]
-        [InlineData(new double[] {10, 15, 18})]
-        [InlineData(new double[] {20, -4, 3.6, 8})]
-        [InlineData(new double[] {-100, -5})]
+        [InlineData(new double[] { })]
+        [InlineData(new double[] { 10, 15, 18 })]
+        [InlineData(new double[] { 20, -4, 3.6, 8 })]
+        [InlineData(new double[] { -100, -5 })]
         public void SubtotalShouldBeTheSumOfOrderItemPrices(double[] prices)
         {
             var order = new Order();
             double total = 0;
-            foreach(var price in prices)
+            foreach (var price in prices)
             {
                 total += price;
-                order.Add(new MockOrderItem() { Price = price});
+                order.Add(new MockOrderItem() { Price = price });
             }
 
             Assert.Equal(total, order.Subtotal);
@@ -83,7 +81,7 @@ namespace CowboyCafe.DataTests.UnitTests
             }
             Assert.Equal(items.Length, order.Items.Count());
 
-            foreach(var item in items)
+            foreach (var item in items)
             {
                 Assert.Contains(item, order.Items);
             }

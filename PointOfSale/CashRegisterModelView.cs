@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using CashRegister;
+﻿using CashRegister;
 using System.ComponentModel;
-using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
@@ -185,70 +181,70 @@ namespace PointOfSale
         private void CalculateBillsNeeded(double data)
         {
 
-            if(data >= 100)
+            if (data >= 100)
             {
                 hundredsNeeded++;
                 data -= 100;
                 CalculateBillsNeeded(data);
             }
 
-            else if(data >= 50)
+            else if (data >= 50)
             {
                 fiftiesNeeded++;
                 data -= 50;
                 CalculateBillsNeeded(data);
             }
 
-            else if(data >= 20)
+            else if (data >= 20)
             {
                 twentiesNeeded++;
                 data -= 20;
                 CalculateBillsNeeded(data);
             }
 
-            else if(data >= 10)
+            else if (data >= 10)
             {
                 tensNeeded++;
                 data -= 10;
                 CalculateBillsNeeded(data);
             }
 
-            else if(data >= 5)
+            else if (data >= 5)
             {
                 fivesNeeded++;
                 data -= 10;
                 CalculateBillsNeeded(data);
             }
 
-            else if(data >= 1)
+            else if (data >= 1)
             {
                 onesNeeded++;
                 data--;
                 CalculateBillsNeeded(data);
             }
 
-            else if(data >= 0.25)
+            else if (data >= 0.25)
             {
                 quartersNeeded++;
                 data -= 0.25;
                 CalculateBillsNeeded(data);
             }
 
-            else if(data >= 0.1)
+            else if (data >= 0.1)
             {
                 dimesNeeded++;
                 data -= 0.1;
                 CalculateBillsNeeded(data);
             }
 
-            else if(data >= 0.05)
+            else if (data >= 0.05)
             {
                 nicklesNeeded++;
                 data -= 0.05;
                 CalculateBillsNeeded(data);
             }
 
-            else if(data >= 0.005)
+            else if (data >= 0.005)
             {
                 penniesNeeded++;
                 data -= 0.01;
@@ -281,10 +277,10 @@ namespace PointOfSale
 
             set
             {
-                if(drawer.Pennies == value || value < 0)
+                if (drawer.Pennies == value || value < 0)
                     return;
                 int quantity = value - drawer.Pennies;
-                if(quantity > 0)
+                if (quantity > 0)
                 {
                     drawer.AddCoin(Coins.Penny, quantity);
                     amountNeeded -= 0.01;
@@ -309,10 +305,10 @@ namespace PointOfSale
 
             set
             {
-                if(drawer.Dimes == value || value < 0)
+                if (drawer.Dimes == value || value < 0)
                     return;
                 int quantity = value - drawer.Dimes;
-                if(quantity > 0)
+                if (quantity > 0)
                 {
                     drawer.AddCoin(Coins.Dime, quantity);
                     amountNeeded -= 0.1;
@@ -337,10 +333,10 @@ namespace PointOfSale
 
             set
             {
-                if(drawer.Nickels == value || value < 0)
+                if (drawer.Nickels == value || value < 0)
                     return;
                 int quantity = value - drawer.Nickels;
-                if(quantity > 0)
+                if (quantity > 0)
                 {
                     drawer.AddCoin(Coins.Nickel, quantity);
                     amountNeeded -= 0.05;
@@ -366,10 +362,10 @@ namespace PointOfSale
 
             set
             {
-                if(drawer.Quarters == value || value < 0)
+                if (drawer.Quarters == value || value < 0)
                     return;
                 int quantity = value - drawer.Quarters;
-                if(quantity > 0)
+                if (quantity > 0)
                 {
                     drawer.AddCoin(Coins.Quarter, quantity);
                     amountNeeded -= 0.25;
@@ -394,10 +390,10 @@ namespace PointOfSale
 
             set
             {
-                if(drawer.HalfDollars == value || value < 0)
+                if (drawer.HalfDollars == value || value < 0)
                     return;
                 int quantity = value - drawer.HalfDollars;
-                if(quantity > 0)
+                if (quantity > 0)
                 {
                     drawer.AddCoin(Coins.HalfDollar, quantity);
                     amountNeeded -= 0.5;
@@ -422,10 +418,10 @@ namespace PointOfSale
 
             set
             {
-                if(drawer.Dollars == value || value < 0)
+                if (drawer.Dollars == value || value < 0)
                     return;
                 int quantity = value - drawer.Dollars;
-                if(quantity > 0)
+                if (quantity > 0)
                 {
                     drawer.AddCoin(Coins.Dollar, quantity);
                     amountNeeded--;
@@ -450,10 +446,10 @@ namespace PointOfSale
 
             set
             {
-                if(drawer.Ones == value || value < 0)
+                if (drawer.Ones == value || value < 0)
                     return;
                 int quantity = value - drawer.Ones;
-                if(quantity > 0)
+                if (quantity > 0)
                 {
                     drawer.AddBill(Bills.One, quantity);
                     amountNeeded--;
@@ -478,10 +474,10 @@ namespace PointOfSale
 
             set
             {
-                if(drawer.Fives == value || value < 0)
+                if (drawer.Fives == value || value < 0)
                     return;
                 int quantity = value - drawer.Fives;
-                if(quantity > 0)
+                if (quantity > 0)
                 {
                     drawer.AddBill(Bills.Five, quantity);
                     amountNeeded -= 5;
@@ -506,10 +502,10 @@ namespace PointOfSale
 
             set
             {
-                if(drawer.Tens == value || value < 0)
+                if (drawer.Tens == value || value < 0)
                     return;
                 int quantity = value - drawer.Tens;
-                if(quantity > 0)
+                if (quantity > 0)
                 {
                     drawer.AddBill(Bills.Ten, quantity);
                     amountNeeded -= 10;
@@ -534,10 +530,10 @@ namespace PointOfSale
 
             set
             {
-                if(drawer.Twenties == value || value < 0)
+                if (drawer.Twenties == value || value < 0)
                     return;
                 int quantity = value - drawer.Twenties;
-                if(quantity > 0)
+                if (quantity > 0)
                 {
                     drawer.AddBill(Bills.Twenty, quantity);
                     amountNeeded -= 20;
@@ -562,10 +558,10 @@ namespace PointOfSale
 
             set
             {
-                if(drawer.Fifties == value || value < 0)
+                if (drawer.Fifties == value || value < 0)
                     return;
                 int quantity = value - drawer.Fifties;
-                if(quantity > 0)
+                if (quantity > 0)
                 {
                     drawer.AddBill(Bills.Fifty, quantity);
                     amountNeeded -= 50;
@@ -590,10 +586,10 @@ namespace PointOfSale
 
             set
             {
-                if(drawer.Hundreds == value || value < 0)
+                if (drawer.Hundreds == value || value < 0)
                     return;
                 int quantity = value - drawer.Hundreds;
-                if(quantity > 0)
+                if (quantity > 0)
                 {
                     drawer.AddBill(Bills.Hundred, quantity);
                     amountNeeded -= 100;
@@ -618,10 +614,10 @@ namespace PointOfSale
 
             set
             {
-                if(drawer.Twos == value || value < 0)
+                if (drawer.Twos == value || value < 0)
                     return;
                 int quantity = value - drawer.Twos;
-                if(quantity > 0)
+                if (quantity > 0)
                 {
                     drawer.AddBill(Bills.Two, quantity);
                     amountNeeded -= 2;

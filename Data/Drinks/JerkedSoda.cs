@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {
@@ -103,9 +102,9 @@ namespace CowboyCafe.Data
         {
             get
             {
-                if(flavor == SodaFlavor.CreamSoda)
+                if (flavor == SodaFlavor.CreamSoda)
                 {
-                    switch(Size)
+                    switch (Size)
                     {
                         case Size.Small:
                             return "Small Cream Soda Jerked Soda";
@@ -118,9 +117,9 @@ namespace CowboyCafe.Data
                     }
                 }
 
-                else if(flavor == SodaFlavor.OrangeSoda)
+                else if (flavor == SodaFlavor.OrangeSoda)
                 {
-                    switch(Size)
+                    switch (Size)
                     {
                         case Size.Small:
                             return "Small Orange Soda Jerked Soda";
@@ -133,9 +132,9 @@ namespace CowboyCafe.Data
                     }
                 }
 
-                else if(flavor == SodaFlavor.Sarsparilla)
+                else if (flavor == SodaFlavor.Sarsparilla)
                 {
-                    switch(Size)
+                    switch (Size)
                     {
                         case Size.Small:
                             return "Small Sarsparilla Jerked Soda";
@@ -148,9 +147,9 @@ namespace CowboyCafe.Data
                     }
                 }
 
-                else if(flavor == SodaFlavor.BirchBeer)
+                else if (flavor == SodaFlavor.BirchBeer)
                 {
-                    switch(Size)
+                    switch (Size)
                     {
                         case Size.Small:
                             return "Small Birch Beer Jerked Soda";
@@ -165,7 +164,7 @@ namespace CowboyCafe.Data
 
                 else
                 {
-                    switch(Size)
+                    switch (Size)
                     {
                         case Size.Small:
                             return "Small Root Beer Jerked Soda";

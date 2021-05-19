@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {
@@ -75,7 +73,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                switch(Size)
+                switch (Size)
                 {
                     case Size.Small:
                         return "Small Pan de Campo";

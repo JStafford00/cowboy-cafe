@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Xml.Schema;
 
 namespace CowboyCafe.Data
 {
@@ -95,12 +93,12 @@ namespace CowboyCafe.Data
             List<IOrderItem> results = new List<IOrderItem>();
             IEnumerable<IOrderItem> items = CompleteMenu();
 
-            if(terms == null)
+            if (terms == null)
                 return items;
 
-            foreach(IOrderItem item in items)
+            foreach (IOrderItem item in items)
             {
-                if(item.ItemType.Contains(terms, StringComparison.InvariantCultureIgnoreCase))
+                if (item.ItemType.Contains(terms, StringComparison.InvariantCultureIgnoreCase))
                 {
                     results.Add(item);
                 }
@@ -130,30 +128,30 @@ namespace CowboyCafe.Data
         /// <returns>filtered items</returns>
         public static IEnumerable<IOrderItem> FilterByCatagory(IEnumerable<IOrderItem> items, IEnumerable<string> types)
         {
-            if(types == null || types.Count() == 0)
+            if (types == null || types.Count() == 0)
                 return items;
 
             List<IOrderItem> results = new List<IOrderItem>();
 
-            if(types.Contains("Entree"))
+            if (types.Contains("Entree"))
             {
-                foreach(CowboyCafe.Data.Entree entree in items.OfType<CowboyCafe.Data.Entree>())
+                foreach (CowboyCafe.Data.Entree entree in items.OfType<CowboyCafe.Data.Entree>())
                 {
                     results.Add(entree);
                 }
             }
 
-            if(types.Contains("Side"))
+            if (types.Contains("Side"))
             {
-                foreach(CowboyCafe.Data.Side side in items.OfType<CowboyCafe.Data.Side>())
+                foreach (CowboyCafe.Data.Side side in items.OfType<CowboyCafe.Data.Side>())
                 {
                     results.Add(side);
                 }
             }
 
-            if(types.Contains("Drink"))
+            if (types.Contains("Drink"))
             {
-                foreach(CowboyCafe.Data.Drink drink in items.OfType<CowboyCafe.Data.Drink>())
+                foreach (CowboyCafe.Data.Drink drink in items.OfType<CowboyCafe.Data.Drink>())
                 {
                     results.Add(drink);
                 }
@@ -182,7 +180,7 @@ namespace CowboyCafe.Data
 
             catch
             {
-                
+
             }
 
             try
@@ -195,21 +193,21 @@ namespace CowboyCafe.Data
 
             }
 
-            foreach(CowboyCafe.Data.Entree entree in items.OfType<CowboyCafe.Data.Entree>())
+            foreach (CowboyCafe.Data.Entree entree in items.OfType<CowboyCafe.Data.Entree>())
             {
-                if(entree.Calories >= min && entree.Calories <= max)
+                if (entree.Calories >= min && entree.Calories <= max)
                     results.Add(entree);
             }
 
-            foreach(CowboyCafe.Data.Side side in items.OfType<CowboyCafe.Data.Side>())
+            foreach (CowboyCafe.Data.Side side in items.OfType<CowboyCafe.Data.Side>())
             {
-                if(side.Calories >= min && side.Calories <= max)
+                if (side.Calories >= min && side.Calories <= max)
                     results.Add(side);
             }
 
-            foreach(CowboyCafe.Data.Drink drink in items.OfType<CowboyCafe.Data.Drink>())
+            foreach (CowboyCafe.Data.Drink drink in items.OfType<CowboyCafe.Data.Drink>())
             {
-                if(drink.Calories >= min && drink.Calories <= max)
+                if (drink.Calories >= min && drink.Calories <= max)
                     results.Add(drink);
             }
 
@@ -249,9 +247,9 @@ namespace CowboyCafe.Data
 
             }
 
-            foreach(IOrderItem item in items)
+            foreach (IOrderItem item in items)
             {
-                if(item.Price >= min && item.Price <= max)
+                if (item.Price >= min && item.Price <= max)
                     results.Add(item);
             }
 

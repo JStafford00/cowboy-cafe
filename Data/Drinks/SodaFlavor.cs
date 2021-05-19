@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CowboyCafe.Data
+﻿namespace CowboyCafe.Data
 {
 
     /*
@@ -10,7 +6,7 @@ namespace CowboyCafe.Data
      * Class: SodaFlavor.cs
      * Purpose: Contains information on all the soda flavors.
      */
-    public enum  SodaFlavor
+    public enum SodaFlavor
     {
         CreamSoda,
         OrangeSoda,
